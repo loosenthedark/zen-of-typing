@@ -1,0 +1,7 @@
+Python 3.0 (also called "Python 3000" or "Py3K") was released on December 3, 2008.
+It was designed to rectify fundamental design flaws in the language—the changes required could not be implemented while retaining full backwards compatibility with the 2.x series, which necessitated a new major version number.
+The guiding principle of Python 3 was: "reduce feature duplication by removing old ways of doing things".
+Python 3.0 was developed with the same philosophy as in prior versions.
+However, as Python had accumulated new and redundant ways to program the same task, Python 3.0 had an emphasis on removing duplicative constructs and modules, in keeping with "There should be one— and preferably only one —obvious way to do it".
+Nonetheless, Python 3.0 remained a multi-paradigm language.
+Coders could still follow object-oriented, structured, and functional programming paradigms, among others, but within such broad choices, the details were intended to be more obvious in Python 3.0 than they were in Python 2.x.
