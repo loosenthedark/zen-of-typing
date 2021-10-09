@@ -6,4 +6,6 @@
 
 ['pep8 warning on regex string in Python, Eclipse'](https://stackoverflow.com/a/19030982/12176426)
 
-pyjokes: "One line jokes for programmers (jokes as a service)" - [GitHub](https://github.com/pyjokes/pyjokes) | [docs](https://pyjok.es/install/)
+pyjokes: "One line jokes for programmers (jokes as a service)" - [GitHub](https://github.com/pyjokes/pyjokes) | [Docs](https://pyjok.es/install/)
+
+['textwrap — Text wrapping and filling'](https://docs.python.org/3/library/textwrap.html) (Python Docs)

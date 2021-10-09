@@ -4,13 +4,13 @@
 
 from __future__ import print_function, unicode_literals
 
-import pyjokes
-
 import textwrap
 
-from pprint import pprint
-
 import random
+
+import pyjokes
+
+from pprint import pprint
 
 import regex
 
@@ -38,7 +38,12 @@ class InputValidator(Validator):
                 cursor_position=len(document.text))  # Move cursor to end
 
 
-print('Welcome to The Zen of Typing - the only place you can improve your typing speed and brush up on some programming essentials at the same time!')
+print('')
+print('Welcome to The Zen of Typing!!!')
+print('')
+print('The only place you can improve your typing speed and')
+print('brush up on some programming essentials at the same time...')
+print('')
 
 questions = [
     {
@@ -84,15 +89,19 @@ def choose_text(text):
 def get_lines_for_typing(text, lines):
     lines_for_typing = text.split('\n')
     if lines == 'give me the whole thing!':
-        return '\n'.join(lines_for_typing)
-    return '\n'.join(lines_for_typing[:int(lines)])
+        return lines_for_typing
+    return lines_for_typing[:int(lines)]
 
 if __name__ == '__main__':
     answers = prompt(questions)
     chosen_text = answers['text']
     num_of_lines = answers['lines']
+    print('')
     print('You have chosen to type:')
+    print('')
     print(f"{num_of_lines} lines from {chosen_text}...")
+    print('')
     TEXT_FOR_TYPING = choose_text(chosen_text)
     TEXT_FOR_TYPING = get_lines_for_typing(TEXT_FOR_TYPING, num_of_lines)
-    print(textwrap.fill(TEXT_FOR_TYPING, width=80))
+    for line in TEXT_FOR_TYPING:
+        print(textwrap.fill(line, width=80))
