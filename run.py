@@ -4,9 +4,11 @@
 # Write your code to expect a terminal of 80 characters wide and 24 rows high
 from __future__ import print_function, unicode_literals
 
-import sys
+import pyjokes
 
 from pprint import pprint
+
+import random
 
 import regex
 
@@ -67,14 +69,20 @@ questions = [
 ]
 
 def choose_text(text):
-    file = open(f'texts/{text}.txt').read()
-    return file
+    if text == 'jokes':
+        jokes = pyjokes.get_jokes()
+        random.shuffle(jokes)
+        jokes = jokes[:10]
+        file = '\n'.join(jokes)
+        return file
+    else:
+        file = open(f'texts/{text}.txt').read()
+        return file
 
 def get_lines_for_typing(text, lines):
     lines_for_typing = text.split('\n')
     if lines == 'give me the whole thing!':
         return '\n'.join(lines_for_typing)
-    print(lines)
     return '\n'.join(lines_for_typing[:int(lines)])
 
 if __name__ == '__main__':
@@ -86,3 +94,4 @@ if __name__ == '__main__':
     TEXT_FOR_TYPING = choose_text(chosen_text)
     TEXT_FOR_TYPING = get_lines_for_typing(TEXT_FOR_TYPING, num_of_lines)
     print(TEXT_FOR_TYPING)
+    # print('\n'.join(pyjokes.get_jokes()[:1]))

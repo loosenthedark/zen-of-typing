@@ -35,3 +35,5 @@ Happy coding!
 [PyInquirer: "A Python module for common interactive command line user interfaces"](https://github.com/CITGuru/PyInquirer) (GitHub)
 
 ['pep8 warning on regex string in Python, Eclipse'](https://stackoverflow.com/a/19030982/12176426)
+
+pyjokes: "One line jokes for programmers (jokes as a service)" - [GitHub](https://github.com/pyjokes/pyjokes) | [docs](https://pyjok.es/install/)
