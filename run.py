@@ -4,26 +4,25 @@
 # Write your code to expect a terminal of 80 characters wide and 24 rows high
 from __future__ import print_function, unicode_literals
 
-import regex
 from pprint import pprint
+
+import regex
 
 from prompt_toolkit.validation import Validator, ValidationError
 
 from PyInquirer import prompt
 
-from examples import custom_style_3
+
+# class PhoneNumberValidator(Validator):
+#     def validate(self, document):
+#         ok = regex.match(r"^\d{10}$", document.text)
+#         if not ok:
+#             raise ValidationError(
+#                 message='Please enter a valid phone number',
+#                 cursor_position=len(document.text))  # Move cursor to end
 
 
-class PhoneNumberValidator(Validator):
-    def validate(self, document):
-        ok = regex.match('^([01]{1})?[-.\s]?\(?(\d{3})\)?[-.\s]?(\d{3})[-.\s]?(\d{4})\s?((?:#|ext\.?\s?|x\.?\s?){1}(?:\d+)?)?$', document.text)
-        if not ok:
-            raise ValidationError(
-                message='Please enter a valid phone number',
-                cursor_position=len(document.text))  # Move cursor to end
-
-
-class NumberValidator(Validator):
+class InputValidator(Validator):
     def validate(self, document):
         try:
             int(document.text)
@@ -37,58 +36,18 @@ print('Hi, welcome to Python Pizza')
 
 questions = [
     {
-        'type': 'confirm',
-        'name': 'toBeDelivered',
-        'message': 'Is this for delivery?',
-        'default': False
-    },
-    {
-        'type': 'input',
-        'name': 'phone',
-        'message': 'What\'s your phone number?',
-        'validate': PhoneNumberValidator
-    },
-    {
         'type': 'list',
-        'name': 'size',
-        'message': 'What size do you need?',
-        'choices': ['Large', 'Medium', 'Small'],
+        'name': 'text',
+        'message': 'Choose a text:',
+        'choices': ['dry', 'jokes', 'oop', 'python', 'sunscreen', 'zen'],
         'filter': lambda val: val.lower()
     },
     {
-        'type': 'input',
-        'name': 'quantity',
-        'message': 'How many do you need?',
-        'validate': NumberValidator,
-        'filter': lambda val: int(val)
-    },
-    {
-        'type': 'expand',
-        'name': 'toppings',
-        'message': 'What about the toppings?',
-        'choices': [
-            {
-                'key': 'p',
-                'name': 'Pepperoni and cheese',
-                'value': 'PepperoniCheese'
-            },
-            {
-                'key': 'a',
-                'name': 'All dressed',
-                'value': 'alldressed'
-            },
-            {
-                'key': 'w',
-                'name': 'Hawaiian',
-                'value': 'hawaiian'
-            }
-        ]
-    },
-    {
-        'type': 'rawlist',
-        'name': 'beverage',
-        'message': 'You also get a free 2L beverage',
-        'choices': ['Pepsi', '7up', 'Coke']
+        'type': 'list',
+        'name': 'text',
+        'message': 'How many lines do you want?',
+        'choices': ['1', '3', '5', 'The whole thing!'],
+        'filter': lambda val: val.lower()
     },
     {
         'type': 'input',
@@ -109,6 +68,6 @@ questions = [
 #     pass
 
 if __name__ == '__main__':
-    answers = prompt(questions, style=custom_style_3)
+    answers = prompt(questions)
     print('Order receipt:')
     pprint(answers)  # use the answers as input for your app

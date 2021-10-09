@@ -29,3 +29,9 @@ The deployment terminal is set to 80 columns by 24 rows. That means that each li
 
 -----
 Happy coding!
+
+['How to let the user select an input from a finite list?'](https://stackoverflow.com/questions/37565793/how-to-let-the-user-select-an-input-from-a-finite-list#comment100075818_37567304) (Stack Overflow)
+
+[PyInquirer: "A Python module for common interactive command line user interfaces"](https://github.com/CITGuru/PyInquirer) (GitHub)
+
+['pep8 warning on regex string in Python, Eclipse'](https://stackoverflow.com/a/19030982/12176426)
