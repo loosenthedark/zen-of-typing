@@ -1,10 +1,12 @@
 # -*- coding: utf-8 -*-
-# Your code goes here.
-# You can delete these comments, but do not change the name of this file
+
 # Write your code to expect a terminal of 80 characters wide and 24 rows high
+
 from __future__ import print_function, unicode_literals
 
 import pyjokes
+
+import textwrap
 
 from pprint import pprint
 
@@ -93,5 +95,4 @@ if __name__ == '__main__':
     print(f"{num_of_lines} lines from {chosen_text}...")
     TEXT_FOR_TYPING = choose_text(chosen_text)
     TEXT_FOR_TYPING = get_lines_for_typing(TEXT_FOR_TYPING, num_of_lines)
-    print(TEXT_FOR_TYPING)
-    # print('\n'.join(pyjokes.get_jokes()[:1]))
+    print(textwrap.fill(TEXT_FOR_TYPING, width=80))
