@@ -121,23 +121,35 @@ class TypingText:
         self.start_time = self.total_time = self.typing_accuracy = self.wpm = 0
         self.score = f'Time: {self.total_time} | Accuracy: {self.typing_accuracy}% | WordsPerMinute: {self.wpm}'
 
-    def format_text(self):
-        pass
+    def activate(self):
+        answers = prompt(questions)
+        chosen_text = answers['text']
+        num_of_lines = answers['lines']
+        print('')
+        print('You have chosen to type:')
+        print('')
+        print(f"{num_of_lines} lines from {chosen_text}...")
+        print('')
+        # test exception handling functionality within choose_text fn
+        # print(choose_text(text=None))
+        text_for_typing = choose_text(chosen_text)
+        # test exception handling functionality within get_lines_for_typing fn
+        # print(get_lines_for_typing(chosen_text, 'abc'))
+        text_for_typing = get_lines_for_typing(text_for_typing, num_of_lines)
+        stringified_text_for_typing = '\n'.join(text_for_typing)
+        print(len(stringified_text_for_typing))
+        # for char in stringified_text_for_typing:
+        #     print(char)
+        for line in text_for_typing:
+            print(textwrap.fill(line, width=80))
+        # self.reset_game()
+        self.running = True
+        while self.running:
+            print('Off you go!')
+            for i in range(int(num_of_lines)):
+                self.text_typed += (input() + ' ')
+            print(self.text_typed[:-1])
+            print(len(self.text_typed[:-1]))
 
 if __name__ == '__main__':
-    answers = prompt(questions)
-    chosen_text = answers['text']
-    num_of_lines = answers['lines']
-    print('')
-    print('You have chosen to type:')
-    print('')
-    print(f"{num_of_lines} lines from {chosen_text}...")
-    print('')
-    # test exception handling functionality within choose_text fn
-    # print(choose_text(text=None))
-    TEXT_FOR_TYPING = choose_text(chosen_text)
-    # test exception handling functionality within get_lines_for_typing fn
-    # print(get_lines_for_typing(chosen_text, 'abc'))
-    TEXT_FOR_TYPING = get_lines_for_typing(TEXT_FOR_TYPING, num_of_lines)
-    for line in TEXT_FOR_TYPING:
-        print(textwrap.fill(line, width=80))
+    TypingText().activate()
