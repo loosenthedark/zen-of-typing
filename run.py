@@ -12,7 +12,7 @@ import pyjokes
 
 from pprint import pprint
 
-import regex
+import time
 
 from prompt_toolkit.validation import Validator, ValidationError
 
@@ -121,14 +121,21 @@ class TypingText:
         self.start_time = self.total_time = self.typing_accuracy = self.wpm = 0
         self.score = f'Time: {self.total_time} | Accuracy: {self.typing_accuracy}% | WordsPerMinute: {self.wpm}'
 
+    def calculate_results(self, text_a, text_b):
+        if not self.finished:
+            self.total_time = time.time() - self.start_time
+            print(f'Not bad! That took you {str(round(self.total_time, 2))} seconds to type.')
+
     def activate(self):
+        # self.reset_game()
+        self.running = True
         answers = prompt(questions)
         chosen_text = answers['text']
         num_of_lines = answers['lines']
         print('')
         print('You have chosen to type:')
         print('')
-        print(f"{num_of_lines} lines from {chosen_text}...")
+        print(f"{num_of_lines} line(s) from {chosen_text}...")
         print('')
         # test exception handling functionality within choose_text fn
         # print(choose_text(text=None))
@@ -142,14 +149,19 @@ class TypingText:
         #     print(char)
         for line in text_for_typing:
             print(textwrap.fill(line, width=80))
-        # self.reset_game()
-        self.running = True
         while self.running:
-            print('Off you go!')
-            for i in range(int(num_of_lines)):
-                self.text_typed += (input() + ' ')
-            print(self.text_typed[:-1])
+            print('')
+            print('Off you go!!!')
+            print('')
+            self.started = True
+            self.start_time = time.time()
+            if self.started and not self.finished:
+                for i in range(int(num_of_lines)):
+                    self.text_typed += (input() + ' ')
             print(len(self.text_typed[:-1]))
+            self.calculate_results(stringified_text_for_typing, self.text_typed[:-1])
+            self.finished = True
+            self.running = False
 
 if __name__ == '__main__':
     TypingText().activate()
