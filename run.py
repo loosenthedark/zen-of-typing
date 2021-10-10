@@ -42,7 +42,7 @@ print('')
 print('Welcome to The Zen of Typing!!!')
 print('')
 print('The only place you can improve your typing speed and')
-print('brush up on some programming essentials at the same time...')
+print('brush up on some programming principles at the same time...')
 print('')
 
 questions = [
