@@ -123,8 +123,19 @@ class TypingText:
 
     def calculate_results(self, text_a, text_b):
         if not self.finished:
+            # Work out time spent typing...
             self.total_time = time.time() - self.start_time
-            print(f'Not bad! That took you {str(round(self.total_time, 2))} seconds to type.')
+            # Work out typing accuracy...
+            score = 0
+            for i, char in enumerate(text_a):
+                try:
+                    if text_b[i] == char:
+                        score += 1
+                except:
+                    pass
+            self.typing_accuracy = score / len(text_b) * 100
+            print(f'Not bad! That took you {str(round(self.total_time, 2))} seconds to type,')
+            print(f' and you were {str(round(self.typing_accuracy))}% accurate.')
 
     def activate(self):
         # self.reset_game()
