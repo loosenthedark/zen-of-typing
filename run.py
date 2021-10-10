@@ -134,8 +134,11 @@ class TypingText:
                 except:
                     pass
             self.typing_accuracy = score / len(text_b) * 100
+            # Work out WPM...
+            self.wpm = len(text_b) * 60 / (5 * self.total_time)
             print(f'Not bad! That took you {str(round(self.total_time, 2))} seconds to type,')
-            print(f' and you were {str(round(self.typing_accuracy))}% accurate.')
+            print(f'and you were {str(round(self.typing_accuracy))}% accurate.')
+            print(f'Your average typing speed was {str(round(self.wpm))} words per minute.')
 
     def activate(self):
         # self.reset_game()
@@ -155,9 +158,7 @@ class TypingText:
         # print(get_lines_for_typing(chosen_text, 'abc'))
         text_for_typing = get_lines_for_typing(text_for_typing, num_of_lines)
         stringified_text_for_typing = '\n'.join(text_for_typing)
-        print(len(stringified_text_for_typing))
-        # for char in stringified_text_for_typing:
-        #     print(char)
+        # print(len(stringified_text_for_typing))
         for line in text_for_typing:
             print(textwrap.fill(line, width=80))
         while self.running:
@@ -168,8 +169,8 @@ class TypingText:
             self.start_time = time.time()
             if self.started and not self.finished:
                 for i in range(int(num_of_lines)):
-                    self.text_typed += (input() + ' ')
-            print(len(self.text_typed[:-1]))
+                    self.text_typed += (input() + '\n')
+            # print(len(self.text_typed[:-1]))
             self.calculate_results(stringified_text_for_typing, self.text_typed[:-1])
             self.finished = True
             self.running = False
