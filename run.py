@@ -14,6 +14,8 @@ from pprint import pprint
 
 import time
 
+from examples import custom_style_2, custom_style_3
+
 from prompt_toolkit.validation import Validator, ValidationError
 
 from PyInquirer import prompt
@@ -74,6 +76,13 @@ questions = [
         'when': lambda answers: answers['comments'] != 'Nope, all good!'
     }
 ]
+
+question_restart = [{
+        'type': 'confirm',
+        'name': 'restart_game',
+        'message': 'Would you like another go?',
+        'default': False
+    }]
 
 def choose_text(text):
     '''
@@ -136,14 +145,21 @@ class TypingText:
             self.typing_accuracy = score / len(text_b) * 100
             # Work out WPM...
             self.wpm = len(text_b) * 60 / (5 * self.total_time)
-            print(f'Not bad! That took you {str(round(self.total_time, 2))} seconds to type,')
+            print('')
+            print('Not bad!')
+            print(f'That took you {str(round(self.total_time, 2))} seconds to type,')
             print(f'and you were {str(round(self.typing_accuracy))}% accurate.')
             print(f'Your average typing speed was {str(round(self.wpm))} words per minute.')
+            print('')
+            answer = prompt(question_restart, style=custom_style_3)
+            if answer['restart_game']:
+                print('')
+                self.activate()
 
     def activate(self):
-        # self.reset_game()
+        self.game_restart()
         self.running = True
-        answers = prompt(questions)
+        answers = prompt(questions, style=custom_style_2)
         chosen_text = answers['text']
         num_of_lines = answers['lines']
         print('')
@@ -174,6 +190,12 @@ class TypingText:
             self.calculate_results(stringified_text_for_typing, self.text_typed[:-1])
             self.finished = True
             self.running = False
+
+    def game_restart(self):
+        self.reset = False
+        self.finished = False
+        self.text_typed = self.text_to_be_typed = ''
+        self.start_time = self.total_time = self.wpm = 0
 
 if __name__ == '__main__':
     TypingText().activate()
