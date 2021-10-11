@@ -40,13 +40,6 @@ class InputValidator(Validator):
                 cursor_position=len(document.text))  # Move cursor to end
 
 
-print('')
-print('Welcome to The Zen of Typing!')
-print('')
-print('The only place you can improve your typing speed and')
-print('brush up on some programming principles at the same time...')
-print('')
-
 colours = {
     'CEND': '\33[0m',
     'CBOLD': '\33[1m',
@@ -55,12 +48,15 @@ colours = {
     'CBLINK': '\33[5m',
     'CBLINK2': '\33[6m',
     'CSELECTED': '\33[7m',
+    'CNORMAL': '\33[22m',
+    'CBLINKSTOP': '\33[25m',
     'CBLACK': '\33[30m',
     'CRED': '\33[31m',
     'CGREEN': '\33[32m',
     'CYELLOW': '\33[33m',
     'CBLUE': '\33[34m',
     'CVIOLET': '\33[35m',
+    'CVIOLETBLINK': '\33[35;5m',
     'CBEIGE': '\33[36m',
     'CWHITE': '\33[37m',
     'CBLACKBG': '\33[40m',
@@ -88,6 +84,15 @@ colours = {
     'CBEIGEBG2': '\33[106m',
     'CWHITEBG2': '\33[107m'
 }
+
+print(
+    f"{colours['CVIOLET']}Welcome to {colours['CBOLD']}{colours['CBLINK']}The Zen of Typing!{colours['CBLINKSTOP']}{colours['CEND']}")
+print('')
+print(
+    f"{colours['CVIOLET']}The only place you can improve your typing speed and{colours['CEND']}")
+print(
+    f"{colours['CVIOLET']}brush up on some programming principles at the same time...{colours['CEND']}")
+print('')
 
 questions = [
     {
@@ -207,7 +212,7 @@ class TypingText:
         print('')
         print(f"{colours['CYELLOW']}You have chosen to type:{colours['CEND']}")
         print('')
-        print(f"{colours['CBLUE']}{num_of_lines} line(s) from {chosen_text}...{colours['CEND']}")
+        print(f"{colours['CBLUE']}{colours['CBOLD']}{num_of_lines}{colours['CNORMAL']} line(s) from {colours['CBOLD']}{chosen_text}{colours['CNORMAL']}...{colours['CEND']}")
         print('')
         # test exception handling functionality within choose_text fn
         # print(choose_text(text=None))
@@ -218,10 +223,10 @@ class TypingText:
         stringified_text_for_typing = '\n'.join(text_for_typing)
         # print(len(stringified_text_for_typing))
         for line in text_for_typing:
-            print(textwrap.fill(line, width=80))
+            print(f"{colours['CBOLD']}{colours['CITALIC']}{textwrap.fill(line, width=80)}{colours['CEND']}")
         while self.running:
             print('')
-            print(f"{colours['CGREEN']}Off you go!!!{colours['CEND']}")
+            print(f"{colours['CBOLD']}{colours['CBLINK']}{colours['CGREEN']}Off you go!!!{colours['CEND']}")
             print('')
             self.started = True
             self.start_time = time.time()
