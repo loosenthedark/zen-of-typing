@@ -39,6 +39,14 @@ class InputValidator(Validator):
                 message='Please enter a number',
                 cursor_position=len(document.text))  # Move cursor to end
 
+texts = {
+    "dry": "Don't Repeat Yourself (DRY)",
+    "oop": "Object-Oriented Programming (OOP)",
+    "python": "The History of Python: Version 3",
+    "sunscreen": "Everybody’s Free (To Wear Sunscreen)",
+    "zen": "The Zen of Python",
+    "jokes": 'pyjokes: "programmer jokes as a service"'
+}
 
 colours = {
     'CEND': '\33[0m',
@@ -49,6 +57,7 @@ colours = {
     'CBLINK2': '\33[6m',
     'CSELECTED': '\33[7m',
     'CNORMAL': '\33[22m',
+    'CURLSTOP': '\33[24m',
     'CBLINKSTOP': '\33[25m',
     'CBLACK': '\33[30m',
     'CRED': '\33[31m',
@@ -86,12 +95,12 @@ colours = {
 }
 
 print(
-    f"{colours['CVIOLET']}Welcome to {colours['CBOLD']}{colours['CBLINK']}The Zen of Typing!{colours['CBLINKSTOP']}{colours['CEND']}")
+    f"{colours['CBOLD']}{colours['CVIOLET']}Welcome to {colours['CBLINK']}The Zen of Typing!{colours['CBLINKSTOP']}{colours['CEND']}")
 print('')
 print(
-    f"{colours['CVIOLET']}The only place you can improve your typing speed and{colours['CEND']}")
+    f"{colours['CBOLD']}{colours['CVIOLET']}The only place you can improve your typing speed and{colours['CEND']}")
 print(
-    f"{colours['CVIOLET']}brush up on some programming principles at the same time...{colours['CEND']}")
+    f"{colours['CBOLD']}{colours['CVIOLET']}brush up on some programming principles at the same time...{colours['CEND']}")
 print('')
 
 questions = [
@@ -99,7 +108,7 @@ questions = [
         'type': 'list',
         'name': 'text',
         'message': 'Please choose a text:',
-        'choices': ['DRY', 'Jokes', 'OOP', 'Python', 'Sunscreen', 'Zen'],
+        'choices': ['DRY', 'Jokes', 'OOP', 'Python', 'Sunscreen', 'Zen', 'Choose one for me!'],
         'filter': lambda val: val.lower()
     },
     {
@@ -210,9 +219,9 @@ class TypingText:
         chosen_text = answers['text']
         num_of_lines = answers['lines']
         print('')
-        print(f"{colours['CYELLOW']}You have chosen to type:{colours['CEND']}")
+        print(f"{colours['CBOLD']}{colours['CYELLOW']}You have chosen to type:{colours['CEND']}")
         print('')
-        print(f"{colours['CBLUE']}{colours['CBOLD']}{num_of_lines}{colours['CNORMAL']} line(s) from {colours['CBOLD']}{chosen_text}{colours['CNORMAL']}...{colours['CEND']}")
+        print(f"{colours['CBOLD']}{colours['CBLUE']}{colours['CURL']}{num_of_lines} line(s){colours['CURLSTOP']} from {colours['CURL']}{texts[chosen_text]}{colours['CURLSTOP']}...{colours['CEND']}")
         print('')
         # test exception handling functionality within choose_text fn
         # print(choose_text(text=None))
@@ -223,7 +232,7 @@ class TypingText:
         stringified_text_for_typing = '\n'.join(text_for_typing)
         # print(len(stringified_text_for_typing))
         for line in text_for_typing:
-            print(f"{colours['CBOLD']}{colours['CITALIC']}{textwrap.fill(line, width=80)}{colours['CEND']}")
+            print(f"{colours['CITALIC']}{textwrap.fill(line, width=80)}{colours['CEND']}")
         while self.running:
             print('')
             print(f"{colours['CBOLD']}{colours['CBLINK']}{colours['CGREEN']}Off you go!!!{colours['CEND']}")
