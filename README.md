@@ -18,6 +18,8 @@ pyjokes: "One line jokes for programmers (jokes as a service)" - [GitHub](https:
 
 ['textwrap — Text wrapping and filling'](https://docs.python.org/3/library/textwrap.html) (Python Docs)
 
+['How to print colored text to the terminal'](https://stackoverflow.com/a/39452138/12176426) (Stack Overflow)
+
 ['Ninety-ninety rule'](https://en.wikipedia.org/wiki/Ninety%E2%80%93ninety_rule) (Wikipedia)
 
 ### Potential Future Features:
