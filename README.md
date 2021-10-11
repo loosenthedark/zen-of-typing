@@ -12,6 +12,8 @@ The text content of the project's `sunscreen.txt` file is an abridged version of
 
 ['How to let the user select an input from a finite list?'](https://stackoverflow.com/questions/37565793/how-to-let-the-user-select-an-input-from-a-finite-list#comment100075818_37567304) (Stack Overflow)
 
+['How to Do Ternary Operator Assignment in Python'](https://www.webucator.com/article/how-to-do-ternary-operator-assignment-in-python/) (Webucator)
+
 ['How to measure elapsed time in Python?'](https://stackoverflow.com/questions/7370801/how-to-measure-elapsed-time-in-python/7370824#7370824) (Stack Overflow)
 
 [PyInquirer: "A Python module for common interactive command line user interfaces"](https://github.com/CITGuru/PyInquirer) (GitHub)
@@ -29,6 +31,10 @@ pyjokes: "One line jokes for programmers (jokes as a service)" - [GitHub](https:
 ['Ninety-ninety rule'](https://en.wikipedia.org/wiki/Ninety%E2%80%93ninety_rule) (Wikipedia)
 
 ['Create Your Own Python Projects'](https://www.linkedin.com/learning/python-projects-14276284/create-your-own-python-projects) (LinkedIn Learning)
+
+### Bugs (+/- Bug Fixes):
+
+![Bug: ValueError showing in deployment terminal](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
 ### Potential Future Features:
 

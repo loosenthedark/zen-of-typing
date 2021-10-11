@@ -56,6 +56,7 @@ colours = {
     'CBLINK': '\33[5m',
     'CBLINK2': '\33[6m',
     'CSELECTED': '\33[7m',
+    'CURL2': '\33[21m',
     'CNORMAL': '\33[22m',
     'CURLSTOP': '\33[24m',
     'CBLINKSTOP': '\33[25m',
@@ -171,7 +172,7 @@ def get_lines_for_typing(text, lines):
     '''
     try:
         lines_for_typing = text.split('\n')
-        if lines == 'give me the whole thing!':
+        if lines == 'all':
             return lines_for_typing
         return lines_for_typing[:int(lines)]
     except Exception as ex:
@@ -217,7 +218,7 @@ class TypingText:
         self.running = True
         answers = prompt(questions, style=custom_style_2)
         chosen_text = answers['text']
-        num_of_lines = answers['lines']
+        num_of_lines = 'all' if answers['lines'] == 'give me the whole thing!' else answers['lines']
         print('')
         print(f"{colours['CBOLD']}{colours['CYELLOW']}You have chosen to type:{colours['CEND']}")
         print('')
@@ -240,8 +241,12 @@ class TypingText:
             self.started = True
             self.start_time = time.time()
             if self.started and not self.finished:
-                for i in range(int(num_of_lines)):
-                    self.text_typed += (input() + '\n')
+                if num_of_lines != 'all':
+                    for i in range(int(num_of_lines)):
+                        self.text_typed += (input() + '\n')
+                else:
+                    for i in range(13):
+                        self.text_typed += (input() + '\n')
             # print(len(self.text_typed[:-1]))
             self.calculate_results(stringified_text_for_typing, self.text_typed[:-1])
             self.finished = True
