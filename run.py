@@ -94,7 +94,7 @@ questions = [
         'type': 'list',
         'name': 'text',
         'message': 'Please choose a text:',
-        'choices': ['dry', 'jokes', 'oop', 'python', 'sunscreen', 'zen'],
+        'choices': ['DRY', 'Jokes', 'OOP', 'Python', 'Sunscreen', 'Zen'],
         'filter': lambda val: val.lower()
     },
     {
