@@ -120,17 +120,23 @@ questions = [
         'filter': lambda val: val.lower()
     },
     {
+        'type': 'confirm',
+        'name': 'secret_password',
+        'message': 'Do you know the secret password?',
+        'default': False
+    },
+    {
         'type': 'input',
-        'name': 'comments',
-        'message': 'Any comments on your purchase experience?',
-        'default': 'Nope, all good!'
+        'name': 'enter_password',
+        'message': 'Please enter the secret password:',
+        'when': lambda answers: answers['secret_password']
     },
     {
         'type': 'list',
-        'name': 'prize',
-        'message': 'For leaving a comment, you get a freebie',
-        'choices': ['cake', 'fries'],
-        'when': lambda answers: answers['comments'] != 'Nope, all good!'
+        'name': 'mode',
+        'message': 'Please select a game mode:',
+        'choices': ['normal mode', 'BEAST MODE'],
+        'when': lambda answers: answers['secret_password'] and answers['enter_password'] == 'PEP8'
     }
 ]
 
@@ -203,12 +209,11 @@ class TypingText:
             # Work out WPM...
             self.wpm = len(text_b) * 60 / (5 * self.total_time)
             print('')
-            print('Not bad!')
-            print(f'That took you {str(round(self.total_time, 2))} seconds to type,')
-            print(f'and you were {str(round(self.typing_accuracy))}% accurate.')
-            print(f'Your average typing speed was {str(round(self.wpm))} words per minute.')
+            print(f"{colours['CBOLD']}{colours['CGREEN']}Not bad!{colours['CEND']}")
+            print(f"{colours['CBOLD']}{colours['CGREEN']}That took you {str(round(self.total_time, 2))} seconds to type, and you were {str(round(self.typing_accuracy))}% accurate.{colours['CEND']}")
+            print(f"{colours['CBOLD']}{colours['CGREEN']}Your average typing speed was {str(round(self.wpm))} words per minute.{colours['CEND']}")
             print('')
-            answer = prompt(question_restart, style=custom_style_3)
+            answer = prompt(question_restart, style=custom_style_2)
             if answer['restart_game']:
                 print('')
                 self.activate()
@@ -220,9 +225,11 @@ class TypingText:
         chosen_text = random.choice(['dry', 'jokes', 'oop', 'python', 'sunscreen', 'zen']) if answers['text'] == "can't decide. choose one for me!" else answers['text']
         num_of_lines = 'all' if answers['lines'] == 'give me the whole thing!' else answers['lines']
         print('')
-        print(f"{colours['CBOLD']}{colours['CYELLOW']}You have chosen to type:{colours['CEND']}")
-        print('')
-        print(f"{colours['CBOLD']}{colours['CBLUE']}{colours['CURL']}{num_of_lines} line(s){colours['CURLSTOP']} from {colours['CURL']}{texts[chosen_text]}{colours['CURLSTOP']}...{colours['CEND']}")
+        if answers['text'] != "can't decide. choose one for me!":
+            print(f"{colours['CBOLD']}{colours['CBLUE']}You have chosen to type:{colours['CEND']}")
+        print(f"{colours['CBOLD']}{colours['CBLUE']}{colours['CURL']}{num_of_lines} line(s){colours['CURLSTOP']} from {colours['CURL']}{texts[chosen_text]}{colours['CURLSTOP']}{colours['CEND']}")
+        if answers['text'] == "can't decide. choose one for me!":
+            print(f"{colours['CBOLD']}{colours['CBLUE']}have been chosen for you:{colours['CEND']}")
         print('')
         # test exception handling functionality within choose_text fn
         # print(choose_text(text=None))
@@ -236,7 +243,7 @@ class TypingText:
             print(f"{colours['CITALIC']}{textwrap.fill(line, width=80)}{colours['CEND']}")
         while self.running:
             print('')
-            print(f"{colours['CBOLD']}{colours['CBLINK']}{colours['CGREEN']}Off you go!!!{colours['CEND']}")
+            print(f"{colours['CBOLD']}{colours['CBLINK']}{colours['CYELLOW']}Off you go!!!{colours['CEND']}")
             print('')
             self.started = True
             self.start_time = time.time()
