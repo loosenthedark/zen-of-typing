@@ -109,7 +109,7 @@ questions = [
         'type': 'list',
         'name': 'text',
         'message': 'Please choose a text:',
-        'choices': ['DRY', 'Jokes', 'OOP', 'Python', 'Sunscreen', 'Zen', 'Choose one for me!'],
+        'choices': ['DRY', 'Jokes', 'OOP', 'Python', 'Sunscreen', 'Zen', "Can't decide. Choose one for me!"],
         'filter': lambda val: val.lower()
     },
     {
@@ -217,7 +217,7 @@ class TypingText:
         self.game_restart()
         self.running = True
         answers = prompt(questions, style=custom_style_2)
-        chosen_text = answers['text']
+        chosen_text = random.choice(['dry', 'jokes', 'oop', 'python', 'sunscreen', 'zen']) if answers['text'] == "can't decide. choose one for me!" else answers['text']
         num_of_lines = 'all' if answers['lines'] == 'give me the whole thing!' else answers['lines']
         print('')
         print(f"{colours['CBOLD']}{colours['CYELLOW']}You have chosen to type:{colours['CEND']}")
