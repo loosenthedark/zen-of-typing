@@ -1,6 +1,6 @@
 ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
-![in-game screenshot](docs/images/screenshots/in-game.png')
+![in-game screenshot](docs/images/screenshots/in-game.png)
 
 ![in-game screenshot with deployment terminal](docs/images/screenshots/in-game-deployed.png)
 
