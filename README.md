@@ -1,5 +1,9 @@
 ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
+![in-game screenshot](docs/images/screenshots/Screen Shot 2021-10-12 at 07.40.22.png)
+
+![in-game screenshot with deployment terminal](docs/images/screenshots/Screen Shot 2021-10-12 at 07.47.23.png)
+
 ['PEP 20 -- The Zen of Python'](https://www.python.org/dev/peps/pep-0020/) (Python.org)
 
 ['Don't repeat yourself'](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself) (Wikipedia)
