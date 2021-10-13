@@ -106,10 +106,17 @@ print('')
 
 questions = [
     {
+        'type': 'confirm',
+        'name': 'practice',
+        'message': 'Would you like some (more) practice before you begin?',
+        'default': False
+    },
+    {
         'type': 'list',
         'name': 'text',
-        'message': 'Please choose a text:',
+        'message': "Okay, I hope you're ready! Please choose a text:",
         'choices': ['DRY', 'Jokes', 'OOP', 'Python', 'Sunscreen', 'Zen', "Can't decide. Choose one for me!"],
+        'when': lambda answers: not answers['practice'],
         'filter': lambda val: val.lower()
     },
     {
@@ -117,26 +124,28 @@ questions = [
         'name': 'lines',
         'message': 'How many lines would you like?',
         'choices': ['1', '3', '5', 'Give me the whole thing!'],
+        'when': lambda answers: not answers['practice'],
         'filter': lambda val: val.lower()
     },
     {
         'type': 'confirm',
         'name': 'secret_password',
         'message': 'Do you know the secret password?',
+        'when': lambda answers: not answers['practice'],
         'default': False
     },
     {
         'type': 'input',
         'name': 'enter_password',
         'message': 'Please enter the secret password:',
-        'when': lambda answers: answers['secret_password']
+        'when': lambda answers: not answers['practice'] and answers['secret_password']
     },
     {
         'type': 'list',
         'name': 'mode',
         'message': 'Please select a game mode:',
         'choices': ['normal mode', 'BEAST MODE'],
-        'when': lambda answers: answers['secret_password'] and answers['enter_password'] == 'PEP8'
+        'when': lambda answers: not answers['practice'] and answers['secret_password'] and answers['enter_password'] == 'PEP8'
     }
 ]
 
@@ -187,6 +196,7 @@ def get_lines_for_typing(text, lines):
 class TypingText:
 
     def __init__(self):
+        self.practiced = False
         self.reset = True
         self.started = self.finished = self.running = False
         self.text_typed = self.text_to_be_typed = ''
@@ -222,14 +232,20 @@ class TypingText:
         self.game_restart()
         self.running = True
         answers = prompt(questions, style=custom_style_2)
-        chosen_text = random.choice(['dry', 'jokes', 'oop', 'python', 'sunscreen', 'zen']) if answers['text'] == "can't decide. choose one for me!" else answers['text']
-        num_of_lines = 'all' if answers['lines'] == 'give me the whole thing!' else answers['lines']
-        print('')
-        if answers['text'] != "can't decide. choose one for me!":
-            print(f"{colours['CBOLD']}{colours['CBLUE']}You have chosen to type:{colours['CEND']}")
-        print(f"{colours['CBOLD']}{colours['CBLUE']}{colours['CURL']}{num_of_lines} line(s){colours['CURLSTOP']} from {colours['CURL']}{texts[chosen_text]}{colours['CURLSTOP']}{colours['CEND']}")
-        if answers['text'] == "can't decide. choose one for me!":
-            print(f"{colours['CBOLD']}{colours['CBLUE']}have been chosen for you:{colours['CEND']}")
+        if answers['practice']:
+            chosen_text = None
+            num_of_lines = 'all'
+            print('')
+            print(f"{colours['CBOLD']}{colours['CBLUE']}Right, you can warm up by typing the following. Hit enter when you're done!{colours['CEND']}")
+        else:
+            chosen_text = random.choice(['dry', 'jokes', 'oop', 'python', 'sunscreen', 'zen']) if answers['text'] == "can't decide. choose one for me!" else answers['text']
+            num_of_lines = 'all' if answers['lines'] == 'give me the whole thing!' else answers['lines']
+            print('')
+            if answers['text'] != "can't decide. choose one for me!":
+                print(f"{colours['CBOLD']}{colours['CBLUE']}You have chosen to type:{colours['CEND']}")
+            print(f"{colours['CBOLD']}{colours['CBLUE']}{colours['CURL']}{num_of_lines} line(s){colours['CURLSTOP']} from {colours['CURL']}{texts[chosen_text]}{colours['CURLSTOP']}{colours['CEND']}")
+            if answers['text'] == "can't decide. choose one for me!":
+                print(f"{colours['CBOLD']}{colours['CBLUE']}have been chosen for you:{colours['CEND']}")
         print('')
         # test exception handling functionality within choose_text fn
         # print(choose_text(text=None))
@@ -241,6 +257,12 @@ class TypingText:
         # print(len(stringified_text_for_typing))
         for line in text_for_typing:
             print(f"{colours['CITALIC']}{textwrap.fill(line, width=80)}{colours['CEND']}")
+        if answers['practice']:
+            print('')
+            input()
+            print('')
+            answers['practice'] = 'practiced'
+            self.activate()
         while self.running:
             print('')
             print(f"{colours['CBOLD']}{colours['CBLINK']}{colours['CYELLOW']}Off you go!!!{colours['CEND']}")
@@ -258,6 +280,7 @@ class TypingText:
             self.calculate_results(stringified_text_for_typing, self.text_typed[:-1])
             self.finished = True
             self.running = False
+            self.practiced = True
 
     def game_restart(self):
         self.reset = False
