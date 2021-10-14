@@ -94,9 +94,6 @@ colours = {
     'CWHITEBG2': '\33[107m'
 }
 
-avatar = open('images/avatar-ci.txt').read()
-print(avatar)
-
 ascii_art = open('images/ascii-art.txt').read()
 print(ascii_art)
 
