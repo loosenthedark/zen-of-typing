@@ -10,6 +10,8 @@
 
 ['History of Python' > 'Version 3'](https://en.wikipedia.org/wiki/History_of_Python#Version_3) (Wikipedia)
 
+['Using global variables in a function'](https://stackoverflow.com/questions/423379/using-global-variables-in-a-function) (Stack Overflow)
+
 The text content of the project's `sunscreen.txt` file is an abridged version of the lyrics to [Baz Luhrmann's 1997 spoken-word single 'Everybody’s Free (To Wear Sunscreen)'](https://genius.com/Baz-luhrmann-everybodys-free-to-wear-sunscreen-lyrics) (Genius)
 
 ['How to let the user select an input from a finite list?'](https://stackoverflow.com/questions/37565793/how-to-let-the-user-select-an-input-from-a-finite-list#comment100075818_37567304) (Stack Overflow)
@@ -30,6 +32,8 @@ pyjokes: "One line jokes for programmers (jokes as a service)" - [GitHub](https:
 
 ['ANSI escape code'](https://en.wikipedia.org/wiki/ANSI_escape_code#SGR_(Select_Graphic_Rendition)_parameters) (Wikipedia)
 
+['Convert Images to ASCII Art'](https://manytools.org/hacker-tools/convert-images-to-ascii-art) (manytools.org)
+
 ['Ninety-ninety rule'](https://en.wikipedia.org/wiki/Ninety%E2%80%93ninety_rule) (Wikipedia)
 
 ['Create Your Own Python Projects'](https://www.linkedin.com/learning/python-projects-14276284/create-your-own-python-projects) (LinkedIn Learning)
@@ -37,6 +41,8 @@ pyjokes: "One line jokes for programmers (jokes as a service)" - [GitHub](https:
 ### Bugs (+/- Bug Fixes):
 
 ![Bug: ValueError showing in deployment terminal](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+
+Blinking ANSI code?
 
 ### Potential Future Features:
 

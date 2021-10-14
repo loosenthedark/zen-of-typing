@@ -8,11 +8,11 @@ import textwrap
 
 import random
 
+import time
+
 import pyjokes
 
 from pprint import pprint
-
-import time
 
 from prompt_toolkit.validation import Validator, ValidationError
 
@@ -95,10 +95,8 @@ colours = {
 }
 
 ascii_art = open('images/ascii-art.txt').read()
-print(ascii_art)
-
-ascii_art_2 = open('images/ascii-art-2.txt').read()
-print(ascii_art_2)
+print(
+    f"{colours['CBOLD']}{colours['CGREEN']}{ascii_art}{colours['CEND']}")
 
 print(
     f"{colours['CBOLD']}{colours['CVIOLET']}Welcome to {colours['CBLINK']}The Zen of Typing!{colours['CBLINKSTOP']}{colours['CEND']}")
@@ -160,6 +158,8 @@ question_restart = [{
         'message': 'Would you like another go?',
         'default': False
     }]
+
+PW_COUNT = 0
 
 def choose_text(text):
     '''
@@ -227,6 +227,12 @@ class TypingText:
             print(f"{colours['CBOLD']}{colours['CGREEN']}Not bad!{colours['CEND']}")
             print(f"{colours['CBOLD']}{colours['CGREEN']}That took you {str(round(self.total_time, 2))} seconds to type, and you were {str(round(self.typing_accuracy))}% accurate.{colours['CEND']}")
             print(f"{colours['CBOLD']}{colours['CGREEN']}Your average typing speed was {str(round(self.wpm))} words per minute.{colours['CEND']}")
+            if self.wpm > 10:
+                global PW_COUNT
+                PW_COUNT = PW_COUNT + 1
+                print('')
+                print(f"{colours['CBOLD']}{colours['CBLINK']}{colours['CYELLOW']}The first character in the secret password is: P{colours['CEND']}" if PW_COUNT == 1 else f"{colours['CBOLD']}{colours['CBLINK']}{colours['CYELLOW']}The second character in the secret password is: E{colours['CEND']}" if PW_COUNT == 2 else "")
+                print(f"{colours['CBOLD']}{colours['CBLINK']}{colours['CYELLOW']}Be sure to make a note of it somewhere!{colours['CEND']}")
             print('')
             answer = prompt(question_restart, style=custom_style_2)
             if answer['restart_game']:
