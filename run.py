@@ -231,8 +231,8 @@ class TypingText:
                 global PW_COUNT
                 PW_COUNT = PW_COUNT + 1
                 print('')
-                print(f"{colours['CBOLD']}{colours['CBLINK']}{colours['CYELLOW']}The first character in the secret password is: P{colours['CEND']}" if PW_COUNT == 1 else f"{colours['CBOLD']}{colours['CBLINK']}{colours['CYELLOW']}The second character in the secret password is: E{colours['CEND']}" if PW_COUNT == 2 else "")
-                print(f"{colours['CBOLD']}{colours['CBLINK']}{colours['CYELLOW']}Be sure to make a note of it somewhere!{colours['CEND']}")
+                print(f"{colours['CBOLD']}{colours['CBLINK']}{colours['CYELLOW']}The first character in the secret password is: P{colours['CEND']}" if PW_COUNT == 1 else f"{colours['CBOLD']}{colours['CBLINK']}{colours['CYELLOW']}The second character in the secret password is: E{colours['CEND']}" if PW_COUNT == 2 else f"{colours['CBOLD']}{colours['CBLINK']}{colours['CYELLOW']}The third character in the secret password is: P{colours['CEND']}" if PW_COUNT == 3 else f"{colours['CBOLD']}{colours['CBLINK']}{colours['CYELLOW']}The fourth and {colours['CURL']}final{colours['CURLSTOP']} character in the secret password is: 8{colours['CEND']}" if PW_COUNT == 4 else f"{colours['CBOLD']}{colours['CBLINK']}{colours['CYELLOW']}You should now know all four characters of the secret password...{colours['CEND']}" if PW_COUNT >= 5 else "")
+                print(f"{colours['CBOLD']}{colours['CBLINK']}{colours['CYELLOW']}Be sure to make a note of it somewhere!{colours['CEND']}" if 1 <= PW_COUNT <= 4 else f"{colours['CBOLD']}{colours['CBLINK']}{colours['CYELLOW']}Don't forget to use it in order to unlock BEAST MODE!{colours['CEND']}" if PW_COUNT >= 5 else "")
             print('')
             answer = prompt(question_restart, style=custom_style_2)
             if answer['restart_game']:
