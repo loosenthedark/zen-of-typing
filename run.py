@@ -14,12 +14,11 @@ from pprint import pprint
 
 import time
 
-from examples import custom_style_2, custom_style_3
-
 from prompt_toolkit.validation import Validator, ValidationError
 
 from PyInquirer import prompt
 
+from examples import custom_style_2
 
 # class PhoneNumberValidator(Validator):
 #     def validate(self, document):
@@ -236,11 +235,15 @@ class TypingText:
             chosen_text = None
             num_of_lines = 'all'
             print('')
-            print(f"{colours['CBOLD']}{colours['CBLUE']}Right, you can warm up by typing the following. Hit enter when you're done!{colours['CEND']}")
+            print(f"{colours['CBOLD']}{colours['CBLUE']}You can warm up by typing the following. Hit enter when you're done!{colours['CEND']}")
         else:
             chosen_text = random.choice(['dry', 'jokes', 'oop', 'python', 'sunscreen', 'zen']) if answers['text'] == "can't decide. choose one for me!" else answers['text']
             num_of_lines = 'all' if answers['lines'] == 'give me the whole thing!' else answers['lines']
             print('')
+            if answers['secret_password'] and answers['enter_password'] != 'PEP8':
+                (f"{colours['CBOLD']}{colours['CGREEN']}Not bad!{colours['CEND']}")
+                print(f"{colours['CBOLD']}{colours['CRED']}Sorry, that password is incorrect.{colours['CEND']}")
+                print('')
             if answers['text'] != "can't decide. choose one for me!":
                 print(f"{colours['CBOLD']}{colours['CBLUE']}You have chosen to type:{colours['CEND']}")
             print(f"{colours['CBOLD']}{colours['CBLUE']}{colours['CURL']}{num_of_lines} line(s){colours['CURLSTOP']} from {colours['CURL']}{texts[chosen_text]}{colours['CURLSTOP']}{colours['CEND']}")
