@@ -10,6 +10,8 @@ import random
 
 import pyjokes
 
+import pywhatkit as kt
+
 from pprint import pprint
 
 import time
@@ -37,6 +39,11 @@ class InputValidator(Validator):
             raise ValidationError(
                 message='Please enter a number',
                 cursor_position=len(document.text))  # Move cursor to end
+
+SOURCE_PATH = 'images/avatar-ci.png'
+TARGET_PATH = 'images/avatar-ci'
+
+kt.image_to_ascii_art(SOURCE_PATH, TARGET_PATH)
 
 texts = {
     "dry": "Don't Repeat Yourself (DRY)",
@@ -93,6 +100,15 @@ colours = {
     'CBEIGEBG2': '\33[106m',
     'CWHITEBG2': '\33[107m'
 }
+
+avatar = open('images/avatar-ci.txt').read()
+print(avatar)
+
+ascii_art = open('images/ascii-art.txt').read()
+print(ascii_art)
+
+ascii_art_2 = open('images/ascii-art-2.txt').read()
+print(ascii_art_2)
 
 print(
     f"{colours['CBOLD']}{colours['CVIOLET']}Welcome to {colours['CBLINK']}The Zen of Typing!{colours['CBLINKSTOP']}{colours['CEND']}")
