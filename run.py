@@ -96,15 +96,16 @@ colours = {
 
 ascii_art = open('images/ascii-art.txt').read()
 print(
-    f"{colours['CBOLD']}{colours['CGREEN']}{ascii_art}{colours['CEND']}")
+    f"{colours['CBOLD']}{ascii_art}{colours['CEND']}")
 
+print('')
 print(
     f"{colours['CBOLD']}{colours['CBLUE']}Welcome to {colours['CBLINK']}The Zen of Typing!{colours['CBLINKSTOP']}{colours['CEND']}")
 print('')
 print(
-    f"{colours['CBOLD']}{colours['CBLUE']}The only place you can improve your typing speed and{colours['CEND']}")
+    f"{colours['CBOLD']}{colours['CYELLOW']}The only place you can improve your typing speed and{colours['CEND']}")
 print(
-    f"{colours['CBOLD']}{colours['CBLUE']}brush up on some programming principles at the same time...{colours['CEND']}")
+    f"{colours['CBOLD']}{colours['CYELLOW']}brush up on some programming principles at the same time...{colours['CEND']}")
 print('')
 
 questions = [

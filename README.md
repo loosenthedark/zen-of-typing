@@ -421,6 +421,8 @@ This site has been created for development purposes only.
 
 ['Using global variables in a function'](https://stackoverflow.com/questions/423379/using-global-variables-in-a-function) (Stack Overflow)
 
+[Python icon ASCII art](images/ascii-art.txt) copied from [this GitHub repo](https://github.com/honno/ascii-art) (though the original image source was [this subreddit](https://www.reddit.com/r/Python/comments/ifag14/python_logo_in_colored_ascii_art/))
+
 The text content of the project's `sunscreen.txt` file is an abridged version of the lyrics to [Baz Luhrmann's 1997 spoken-word single 'Everybody’s Free (To Wear Sunscreen)'](https://genius.com/Baz-luhrmann-everybodys-free-to-wear-sunscreen-lyrics) (Genius)
 
 ['How to let the user select an input from a finite list?'](https://stackoverflow.com/questions/37565793/how-to-let-the-user-select-an-input-from-a-finite-list#comment100075818_37567304) (Stack Overflow)
