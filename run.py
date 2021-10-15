@@ -192,9 +192,10 @@ def get_lines_for_typing(text, lines):
     '''
     try:
         lines_for_typing = text.split('\n')
+        reversed_lines = [line[::-1] for line in lines_for_typing]
         if lines == 'all':
-            return lines_for_typing
-        return lines_for_typing[:int(lines)]
+            return reversed_lines
+        return reversed_lines[:int(lines)]
     except Exception as ex:
         print(ex)
 
@@ -216,6 +217,7 @@ class TypingText:
             score = 0
             for i, char in enumerate(text_a):
                 try:
+                    # print(char)
                     if text_b[i] == char:
                         score += 1
                 except:
@@ -269,10 +271,10 @@ class TypingText:
         # print(get_lines_for_typing(chosen_text, 'abc'))
         text_for_typing = get_lines_for_typing(text_for_typing, num_of_lines)
         stringified_text_for_typing = '\n'.join(text_for_typing)
-        stringified_text_for_typing = stringified_text_for_typing[::-1]
+        # stringified_text_for_typing = stringified_text_for_typing[::-1]
         # print(len(stringified_text_for_typing))
         for line in text_for_typing:
-            print(f"{colours['CITALIC']}{textwrap.fill(line[::-1], width=80)}{colours['CEND']}")
+            print(f"{colours['CITALIC']}{textwrap.fill(line, width=80)}{colours['CEND']}")
         if answers['practice']:
             print('')
             input()

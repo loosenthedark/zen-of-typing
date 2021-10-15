@@ -451,6 +451,8 @@ pyjokes: "One line jokes for programmers (jokes as a service)" - [GitHub](https:
 
 Blinking ANSI code?
 
+Prevent pasted-in text from validating
+
 ### Potential Future Features:
 
 - ask user to enter email and send them a breakdown of their typing speed/accuracy (via smtplib module)?
