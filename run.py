@@ -99,12 +99,12 @@ print(
     f"{colours['CBOLD']}{colours['CGREEN']}{ascii_art}{colours['CEND']}")
 
 print(
-    f"{colours['CBOLD']}{colours['CVIOLET']}Welcome to {colours['CBLINK']}The Zen of Typing!{colours['CBLINKSTOP']}{colours['CEND']}")
+    f"{colours['CBOLD']}{colours['CBLUE']}Welcome to {colours['CBLINK']}The Zen of Typing!{colours['CBLINKSTOP']}{colours['CEND']}")
 print('')
 print(
-    f"{colours['CBOLD']}{colours['CVIOLET']}The only place you can improve your typing speed and{colours['CEND']}")
+    f"{colours['CBOLD']}{colours['CBLUE']}The only place you can improve your typing speed and{colours['CEND']}")
 print(
-    f"{colours['CBOLD']}{colours['CVIOLET']}brush up on some programming principles at the same time...{colours['CEND']}")
+    f"{colours['CBOLD']}{colours['CBLUE']}brush up on some programming principles at the same time...{colours['CEND']}")
 print('')
 
 questions = [

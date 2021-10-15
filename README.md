@@ -6,7 +6,9 @@
 
 #### [Live link to deployed project](https://zen-of-typing.herokuapp.com/)
 
-[The Zen of Typing](https://zen-of-typing.herokuapp.com/) offers a fairer, more measured look at the Tokyo 2020 Olympic medal count. Countries are ranked in relative (per capita) instead of absolute medal-winning terms. Site visitors can toggle between two different ranking breakdowns, as well as search for countries, contact the site owner and enable dark mode. Fully interactive and boasting a robust and coherent mobile-first design, Going for Gold makes clever use of the React ecosystem to give users a richly dynamic UI. The application leverages the REST Countries API as well as a local JSON Olympic dataset to render lightning-fast statistical analyses. React Context API and EmailJS integration - the latter bolstered by custom form validation and error handling - round out a distinctly memorable user experience.
+[The Zen of Typing](https://zen-of-typing.herokuapp.com/) is a Python terminal project whose primary purpose is to enable users to practice and improve their touch typing skills. Secondarily, it serves to reinforce various (mainly Python-related) programming principles and fundamentals through the use of carefully-selected practice texts and extracts.
+
+Users can customise their experience by choosing from a range of options before the game itself gets underway. Once all necessary pre-game instructions have been displayed and the target text is loaded, the user's performance is monitored as they attempt to replicate each line. As soon as they finish and hit **Enter**, they receive feedback in the form of a breakdown of their typing speed and accuracy. They may then choose to either restart the game or quit (and exit the application).
 
 ## How to play
 
@@ -440,8 +442,6 @@ pyjokes: "One line jokes for programmers (jokes as a service)" - [GitHub](https:
 ['Create Your Own Python Projects'](https://www.linkedin.com/learning/python-projects-14276284/create-your-own-python-projects) (LinkedIn Learning)
 
 ### Bugs (+/- Bug Fixes):
-
-![Bug: ValueError showing in deployment terminal](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
 Blinking ANSI code?
 
