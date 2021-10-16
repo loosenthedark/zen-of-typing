@@ -239,12 +239,31 @@ class TypingText:
             print(f"{colours['CBOLD']}{colours['CGREEN']}Not bad!{colours['CEND']}")
             print(f"{colours['CBOLD']}{colours['CGREEN']}That took you {str(round(self.total_time, 2))} seconds to type, and you were {str(round(self.typing_accuracy))}% accurate.{colours['CEND']}")
             print(f"{colours['CBOLD']}{colours['CGREEN']}Your average typing speed was {str(round(self.wpm))} words per minute.{colours['CEND']}")
-            if self.wpm > 10:
-                global PW_COUNT
-                PW_COUNT = PW_COUNT + 1
+            global PW_COUNT
+            if self.wpm >= 20 and PW_COUNT == 0:
+                PW_COUNT = 1
                 print('')
-                print(f"{colours['CBOLD']}{colours['CBLINK']}{colours['CYELLOW']}The first character in the secret password is: P{colours['CEND']}" if PW_COUNT == 1 else f"{colours['CBOLD']}{colours['CBLINK']}{colours['CYELLOW']}The second character in the secret password is: E{colours['CEND']}" if PW_COUNT == 2 else f"{colours['CBOLD']}{colours['CBLINK']}{colours['CYELLOW']}The third character in the secret password is: P{colours['CEND']}" if PW_COUNT == 3 else f"{colours['CBOLD']}{colours['CBLINK']}{colours['CYELLOW']}The fourth and {colours['CURL']}final{colours['CURLSTOP']} character in the secret password is: 8{colours['CEND']}" if PW_COUNT == 4 else f"{colours['CBOLD']}{colours['CBLINK']}{colours['CYELLOW']}You should now know all four characters of the secret password...{colours['CEND']}" if PW_COUNT >= 5 else "")
-                print(f"{colours['CBOLD']}{colours['CBLINK']}{colours['CYELLOW']}Be sure to make a note of it somewhere!{colours['CEND']}" if 1 <= PW_COUNT <= 4 else f"{colours['CBOLD']}{colours['CBLINK']}{colours['CYELLOW']}Don't forget to use it in order to unlock BEAST MODE!{colours['CEND']}" if PW_COUNT >= 5 else "")
+                print(f"{colours['CBOLD']}{colours['CBLINK']}{colours['CYELLOW']}The first character in the secret password is: P{colours['CEND']}")
+                print(f"{colours['CBOLD']}{colours['CBLINK']}{colours['CYELLOW']}Be sure to make a note of it somewhere!{colours['CEND']}")
+            elif self.wpm >= 30 and PW_COUNT == 1:
+                PW_COUNT = 2
+                print('')
+                print(f"{colours['CBOLD']}{colours['CBLINK']}{colours['CYELLOW']}The second character in the secret password is: E{colours['CEND']}")
+                print(f"{colours['CBOLD']}{colours['CBLINK']}{colours['CYELLOW']}Be sure to make a note of it somewhere!{colours['CEND']}")
+            elif self.wpm >= 40 and PW_COUNT == 2:
+                PW_COUNT = 3
+                print('')
+                print(f"{colours['CBOLD']}{colours['CBLINK']}{colours['CYELLOW']}The third character in the secret password is: P{colours['CEND']}")
+                print(f"{colours['CBOLD']}{colours['CBLINK']}{colours['CYELLOW']}Be sure to make a note of it somewhere!{colours['CEND']}")
+            elif self.wpm >= 50 and PW_COUNT == 3:
+                PW_COUNT = 4
+                print('')
+                print(f"{colours['CBOLD']}{colours['CBLINK']}{colours['CYELLOW']}The fourth and {colours['CURL']}final{colours['CURLSTOP']} character in the secret password is: 8{colours['CEND']}")
+                print(f"{colours['CBOLD']}{colours['CBLINK']}{colours['CYELLOW']}Be sure to make a note of it somewhere!{colours['CEND']}")
+            elif PW_COUNT == 4:
+                print('')
+                print(f"{colours['CBOLD']}{colours['CBLINK']}{colours['CYELLOW']}You should now have all four characters of the secret password...{colours['CEND']}")
+                print(f"{colours['CBOLD']}{colours['CBLINK']}{colours['CYELLOW']}Don't forget to use it in order to unlock BEAST MODE!{colours['CEND']}")
             print('')
             answer = prompt(question_restart, style=custom_style_2)
             if answer['restart_game']:
@@ -288,7 +307,7 @@ class TypingText:
         text_for_typing = choose_text(chosen_text)
         # test exception handling functionality within get_lines_for_typing fn
         # print(get_lines_for_typing(chosen_text, 'abc'))
-        self.beast = True if answers['secret_password'] and not answers['practice'] and answers['mode'] == 'BEAST MODE' else False
+        self.beast = True if answers['secret_password'] and answers['enter_password'] == 'PEP8' and not answers['practice'] and answers['mode'] == 'BEAST MODE' else False
         text_for_typing = get_lines_for_typing(text_for_typing, num_of_lines, self.beast)
         stringified_text_for_typing = '\n'.join(text_for_typing)
         # stringified_text_for_typing = stringified_text_for_typing[::-1]
