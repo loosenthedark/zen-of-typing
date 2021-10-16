@@ -462,3 +462,5 @@ Prevent pasted-in text from validating
 - ask user to enter email and send them a breakdown of their typing speed/accuracy (via smtplib module)?
 
 - real-time user feedback, e.g. incorrectly-typed text highlighted in red so that the user can go back and correct mistake(s) (cf. [this example](https://mithil467.github.io/mitype/))
+
+- Add padding to terminal output (chiefly the target text and/or user input) to improve readability and overall appearance (cf. [this blog post](https://stackabuse.com/padding-strings-in-python/))

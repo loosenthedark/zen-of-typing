@@ -14,8 +14,6 @@ import sys
 
 import pyjokes
 
-from pprint import pprint
-
 from prompt_toolkit.validation import Validator, ValidationError
 
 from PyInquirer import prompt
@@ -102,12 +100,17 @@ print(
 
 print('')
 print(
-    f"{colours['CBOLD']}{colours['CBLUE']}Welcome to {colours['CBLINK']}The Zen of Typing!{colours['CBLINKSTOP']}{colours['CEND']}")
+    f"{colours['CBOLD']}{colours['CBLUE']}Welcome to "
+    f"{colours['CBLINK']}The Zen of Typing!"
+    f"{colours['CBLINKSTOP']}{colours['CEND']}"
+)
 print('')
 print(
-    f"{colours['CBOLD']}{colours['CYELLOW']}The only place you can improve your typing speed and{colours['CEND']}")
+    f"{colours['CBOLD']}{colours['CYELLOW']}The only place you can "
+    f"improve your typing speed and{colours['CEND']}")
 print(
-    f"{colours['CBOLD']}{colours['CYELLOW']}brush up on some programming principles at the same time...{colours['CEND']}")
+    f"{colours['CBOLD']}{colours['CYELLOW']}brush up on some programming "
+    f"principles at the same time...{colours['CEND']}")
 print('')
 
 questions = [
@@ -121,7 +124,8 @@ questions = [
         'type': 'list',
         'name': 'text',
         'message': "Okay, I hope you're ready! Please choose a text:",
-        'choices': ['DRY', 'Jokes', 'OOP', 'Python', 'Sunscreen', 'Zen', "Can't decide. Choose one for me!"],
+        'choices': ['DRY', 'Jokes', 'OOP', 'Python', 'Sunscreen', 'Zen',
+                    "Can't decide. Choose one for me!"],
         'when': lambda answers: not answers['practice'],
         'filter': lambda val: val.lower()
     },
@@ -144,14 +148,18 @@ questions = [
         'type': 'input',
         'name': 'enter_password',
         'message': 'Please enter the secret password:',
-        'when': lambda answers: not answers['practice'] and answers['secret_password']
+        'when': lambda answers: not answers['practice'] and
+                answers['secret_password']
     },
     {
         'type': 'list',
         'name': 'mode',
         'message': 'Please select a game mode:',
         'choices': ['normal mode', 'BEAST MODE'],
-        'when': lambda answers: not answers['practice'] and answers['secret_password'] and answers['enter_password'] == 'PEP8'
+        'when': lambda answers: (
+                not answers['practice'] and answers['secret_password'] and
+                answers['enter_password'] == 'PEP8'
+                )
     }
 ]
 
@@ -164,13 +172,15 @@ question_restart = [{
 
 PW_COUNT = 0
 
+
 def choose_text(text):
     '''
-    Retrieve typing text content based on selection made by user from multiple-choice menu options.
-    Since files are being loaded from disc/API request, which has the potential for problems
-     that might trigger an exception, code here should be wrapped in a try/except block
+    Retrieve typing text content based on selection made by user from
+    multiple-choice menu options. Since files are being loaded from
+    disc/API request, which has the potential for problems that might
+    trigger an exception, code here should be wrapped in a try/except block
     '''
-    try: # load content from file/API
+    try:  # load content from file/API
         if text == 'jokes':
             jokes = pyjokes.get_jokes()
             random.shuffle(jokes)
@@ -182,11 +192,12 @@ def choose_text(text):
         # use a default/fallback quote in case there's
         # a problem with loading content from file/API
         file = ('The first 90 percent of the code accounts for'
-        ' the first 90 percent of the development time. '
-        'The remaining 10 percent of the code accounts for'
-        ' the other 90 percent of the development time.')
+                ' the first 90 percent of the development time. '
+                'The remaining 10 percent of the code accounts for'
+                ' the other 90 percent of the development time.')
 
     return file
+
 
 def get_lines_for_typing(text, lines, mode):
     '''
@@ -208,6 +219,7 @@ def get_lines_for_typing(text, lines, mode):
     except Exception as ex:
         print(ex)
 
+
 class TypingText:
 
     def __init__(self):
@@ -217,7 +229,10 @@ class TypingText:
         self.started = self.finished = self.running = False
         self.text_typed = self.text_to_be_typed = ''
         self.start_time = self.total_time = self.typing_accuracy = self.wpm = 0
-        self.score = f'Time: {self.total_time} | Accuracy: {self.typing_accuracy}% | WordsPerMinute: {self.wpm}'
+        self.score = (
+            f'Time: {self.total_time} | Accuracy: {self.typing_accuracy}%'
+            f' | WordsPerMinute: {self.wpm}'
+            )
 
     def calculate_results(self, text_a, text_b):
         if not self.finished:
@@ -236,37 +251,94 @@ class TypingText:
             # Work out WPM...
             self.wpm = len(text_b) * 60 / (5 * self.total_time)
             print('')
-            print(f"{colours['CBOLD']}{colours['CGREEN']}Not bad!{colours['CEND']}")
-            print(f"{colours['CBOLD']}{colours['CGREEN']}That took you {str(round(self.total_time, 2))} seconds to type, and you were {str(round(self.typing_accuracy))}% accurate.{colours['CEND']}")
-            print(f"{colours['CBOLD']}{colours['CGREEN']}Your average typing speed was {str(round(self.wpm))} words per minute.{colours['CEND']}")
+            print(
+                f"{colours['CBOLD']}{colours['CGREEN']}Not bad!"
+                f"{colours['CEND']}"
+                )
+            print(
+                f"{colours['CBOLD']}{colours['CGREEN']}That took you "
+                f"{str(round(self.total_time, 2))} seconds to type, and you "
+                f"were {str(round(self.typing_accuracy))}% accurate."
+                f"{colours['CEND']}"
+                )
+            print(
+                f"{colours['CBOLD']}{colours['CGREEN']}Your average typing"
+                f" speed was {str(round(self.wpm))} words per minute."
+                f"{colours['CEND']}"
+                )
             global PW_COUNT
             if self.wpm >= 20 and PW_COUNT == 0:
                 PW_COUNT = 1
                 print('')
-                print(f"{colours['CBOLD']}{colours['CBLINK']}{colours['CYELLOW']}The first character in the secret password is: P{colours['CEND']}")
-                print(f"{colours['CBOLD']}{colours['CBLINK']}{colours['CYELLOW']}Be sure to make a note of it somewhere!{colours['CEND']}")
+                print(
+                    f"{colours['CBOLD']}{colours['CBLINK']}"
+                    f"{colours['CYELLOW']}The first character in"
+                    f" the secret password is: P{colours['CEND']}"
+                    )
+                print(
+                    f"{colours['CBOLD']}{colours['CBLINK']}"
+                    f"{colours['CYELLOW']}Be sure to make a"
+                    f" note of it somewhere!{colours['CEND']}"
+                    )
             elif self.wpm >= 30 and PW_COUNT == 1:
                 PW_COUNT = 2
                 print('')
-                print(f"{colours['CBOLD']}{colours['CBLINK']}{colours['CYELLOW']}The second character in the secret password is: E{colours['CEND']}")
-                print(f"{colours['CBOLD']}{colours['CBLINK']}{colours['CYELLOW']}Be sure to make a note of it somewhere!{colours['CEND']}")
+                print(
+                    f"{colours['CBOLD']}{colours['CBLINK']}"
+                    f"{colours['CYELLOW']}The second character"
+                    f" in the secret password is: E{colours['CEND']}"
+                    )
+                print(
+                    f"{colours['CBOLD']}{colours['CBLINK']}"
+                    f"{colours['CYELLOW']}Be sure to make a"
+                    f" note of it somewhere!{colours['CEND']}"
+                    )
             elif self.wpm >= 40 and PW_COUNT == 2:
                 PW_COUNT = 3
                 print('')
-                print(f"{colours['CBOLD']}{colours['CBLINK']}{colours['CYELLOW']}The third character in the secret password is: P{colours['CEND']}")
-                print(f"{colours['CBOLD']}{colours['CBLINK']}{colours['CYELLOW']}Be sure to make a note of it somewhere!{colours['CEND']}")
+                print(
+                    f"{colours['CBOLD']}{colours['CBLINK']}"
+                    f"{colours['CYELLOW']}The third character "
+                    f"in the secret password is: P{colours['CEND']}"
+                    )
+                print(
+                    f"{colours['CBOLD']}{colours['CBLINK']}"
+                    f"{colours['CYELLOW']}Be sure to make a"
+                    f" note of it somewhere!{colours['CEND']}"
+                    )
             elif self.wpm >= 50 and PW_COUNT == 3:
                 PW_COUNT = 4
                 print('')
-                print(f"{colours['CBOLD']}{colours['CBLINK']}{colours['CYELLOW']}The fourth and {colours['CURL']}final{colours['CURLSTOP']} character in the secret password is: 8{colours['CEND']}")
-                print(f"{colours['CBOLD']}{colours['CBLINK']}{colours['CYELLOW']}Be sure to make a note of it somewhere!{colours['CEND']}")
+                print(
+                    f"{colours['CBOLD']}{colours['CBLINK']}"
+                    f"{colours['CYELLOW']}The fourth and {colours['CURL']}"
+                    f"final{colours['CURLSTOP']} character in the secret "
+                    f"password is: 8{colours['CEND']}"
+                    )
+                print(
+                    f"{colours['CBOLD']}{colours['CBLINK']}"
+                    f"{colours['CYELLOW']}Be sure to make "
+                    f"a note of it somewhere!{colours['CEND']}"
+                    )
             elif PW_COUNT == 4:
                 print('')
-                print(f"{colours['CBOLD']}{colours['CBLINK']}{colours['CYELLOW']}You should now have all four characters of the secret password...{colours['CEND']}")
-                print(f"{colours['CBOLD']}{colours['CBLINK']}{colours['CYELLOW']}Don't forget to use it in order to unlock BEAST MODE!{colours['CEND']}")
+                print(
+                    f"{colours['CBOLD']}{colours['CBLINK']}"
+                    f"{colours['CYELLOW']}You should now have all four "
+                    f"characters of the secret password...{colours['CEND']}"
+                    )
+                print(
+                    f"{colours['CBOLD']}{colours['CBLINK']}"
+                    f"{colours['CYELLOW']}Don't forget to use it in "
+                    f"order to unlock BEAST MODE!{colours['CEND']}"
+                    )
             else:
                 print('')
-                print(f"{colours['CBOLD']}{colours['CBLINK']}{colours['CYELLOW']}Keep playing to reveal the secret password and unlock BEAST MODE!{colours['CEND']}")
+                print(
+                    f"{colours['CBOLD']}{colours['CBLINK']}"
+                    f"{colours['CYELLOW']}Keep practicing to reveal the secret"
+                    f" password and unlock BEAST MODE!{colours['CEND']}"
+                    )
             print('')
             answer = prompt(question_restart, style=custom_style_2)
             if answer['restart_game']:
@@ -274,10 +346,14 @@ class TypingText:
                 self.activate()
             print('')
             print(
-                f"{colours['CBOLD']}{colours['CBLUE']}Thanks for playing The Zen of Typing!{colours['CEND']}")
+                f"{colours['CBOLD']}{colours['CBLUE']}Thanks for playing"
+                f" The Zen of Typing!{colours['CEND']}"
+                )
             print('')
             print(
-                f"{colours['CBOLD']}{colours['CYELLOW']}See you again soon ;){colours['CEND']}")
+                f"{colours['CBOLD']}{colours['CYELLOW']}"
+                f"See you again soon ;){colours['CEND']}"
+                )
             print('')
             sys.exit()
 
@@ -290,33 +366,68 @@ class TypingText:
             chosen_text = None
             num_of_lines = 'all'
             print('')
-            print(f"{colours['CBOLD']}{colours['CBLUE']}You can warm up by typing the following. Hit enter when you're done!{colours['CEND']}")
+            print(
+                f"{colours['CBOLD']}{colours['CBLUE']}"
+                f"You can warm up by typing the following. "
+                f"Hit enter when you're done!{colours['CEND']}"
+                )
         else:
-            chosen_text = random.choice(['dry', 'jokes', 'oop', 'python', 'sunscreen', 'zen']) if answers['text'] == "can't decide. choose one for me!" else answers['text']
-            num_of_lines = 'all' if answers['lines'] == 'give me the whole thing!' else answers['lines']
+            chosen_text = random.choice(
+                ['dry', 'jokes', 'oop', 'python', 'sunscreen', 'zen']
+                ) if (
+                    answers['text'] == "can't decide. choose one for me!"
+                    ) else answers['text']
+            num_of_lines = 'all' if (
+                answers['lines'] == 'give me the whole thing!'
+                ) else answers['lines']
             print('')
-            if answers['secret_password'] and answers['enter_password'] != 'PEP8':
-                (f"{colours['CBOLD']}{colours['CGREEN']}Not bad!{colours['CEND']}")
-                print(f"{colours['CBOLD']}{colours['CRED']}Sorry, that password is incorrect!{colours['CEND']}")
+            if (
+                answers['secret_password'] and
+                answers['enter_password'] != 'PEP8'
+            ):
+                print(
+                    f"{colours['CBOLD']}{colours['CRED']}Sorry, that "
+                    f"password is incorrect!{colours['CEND']}"
+                    )
                 print('')
             if answers['text'] != "can't decide. choose one for me!":
-                print(f"{colours['CBOLD']}{colours['CBLUE']}You have chosen to type:{colours['CEND']}")
-            print(f"{colours['CBOLD']}{colours['CBLUE']}{colours['CURL']}{num_of_lines} line(s){colours['CURLSTOP']} from {colours['CURL']}{texts[chosen_text]}{colours['CURLSTOP']}{colours['CEND']}")
+                print(
+                    f"{colours['CBOLD']}{colours['CBLUE']}You have chosen "
+                    f"to type:{colours['CEND']}"
+                    )
+            print(
+                f"{colours['CBOLD']}{colours['CBLUE']}{colours['CURL']}"
+                f"{num_of_lines} line(s){colours['CURLSTOP']} from "
+                f"{colours['CURL']}{texts[chosen_text]}{colours['CURLSTOP']}"
+                f"{colours['CEND']}"
+                )
             if answers['text'] == "can't decide. choose one for me!":
-                print(f"{colours['CBOLD']}{colours['CBLUE']}have been chosen for you:{colours['CEND']}")
+                print(
+                    f"{colours['CBOLD']}{colours['CBLUE']}have been "
+                    f"chosen for you:{colours['CEND']}"
+                    )
         print('')
         # test exception handling functionality within choose_text fn
         # print(choose_text(text=None))
         text_for_typing = choose_text(chosen_text)
         # test exception handling functionality within get_lines_for_typing fn
         # print(get_lines_for_typing(chosen_text, 'abc'))
-        self.beast = True if answers['secret_password'] and answers['enter_password'] == 'PEP8' and not answers['practice'] and answers['mode'] == 'BEAST MODE' else False
-        text_for_typing = get_lines_for_typing(text_for_typing, num_of_lines, self.beast)
+        self.beast = True if (
+            answers['secret_password'] and
+            answers['enter_password'] == 'PEP8' and
+            not answers['practice'] and answers['mode'] == 'BEAST MODE'
+        ) else False
+        text_for_typing = get_lines_for_typing(
+            text_for_typing, num_of_lines, self.beast
+            )
         stringified_text_for_typing = '\n'.join(text_for_typing)
         # stringified_text_for_typing = stringified_text_for_typing[::-1]
         # print(len(stringified_text_for_typing))
         for line in text_for_typing:
-            print(f"{colours['CITALIC']}{textwrap.fill(line, width=80)}{colours['CEND']}")
+            print(
+                f"{colours['CITALIC']}{textwrap.fill(line, width=76)}"
+                f"{colours['CEND']}"
+                )
         if answers['practice']:
             print('')
             input()
@@ -325,7 +436,10 @@ class TypingText:
             self.activate()
         while self.running:
             print('')
-            print(f"{colours['CBOLD']}{colours['CBLINK']}{colours['CYELLOW']}Off you go!!!{colours['CEND']}")
+            print(
+                f"{colours['CBOLD']}{colours['CBLINK']}{colours['CYELLOW']}"
+                f"Off you go!!!{colours['CEND']}"
+                )
             print('')
             self.started = True
             self.start_time = time.time()
@@ -337,7 +451,9 @@ class TypingText:
                     for i in range(13):
                         self.text_typed += (input() + '\n')
             # print(len(self.text_typed[:-1]))
-            self.calculate_results(stringified_text_for_typing, self.text_typed[:-1])
+            self.calculate_results(
+                stringified_text_for_typing, self.text_typed[:-1]
+                )
             self.finished = True
             self.running = False
             self.practiced = True
