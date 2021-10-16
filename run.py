@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+"""This is the Zen of Typing main app script"""
 
 # Write your code to expect a terminal of 80 characters wide and 24 rows high
 
@@ -14,7 +14,7 @@ import sys
 
 import pyjokes
 
-from prompt_toolkit.validation import Validator, ValidationError
+# from prompt_toolkit.validation import Validator, ValidationError
 
 from PyInquirer import prompt
 
@@ -29,14 +29,14 @@ from examples import custom_style_2
 #                 cursor_position=len(document.text))  # Move cursor to end
 
 
-class InputValidator(Validator):
-    def validate(self, document):
-        try:
-            int(document.text)
-        except ValueError:
-            raise ValidationError(
-                message='Please enter a number',
-                cursor_position=len(document.text))  # Move cursor to end
+# class InputValidator(Validator):
+#     def validate(self, document):
+#         try:
+#             int(document.text)
+#         except ValueError:
+#             raise ValidationError(
+#                 message='Please enter a number',
+#                 cursor_position=len(document.text))  # Move cursor to end
 
 texts = {
     "dry": "Don't Repeat Yourself (DRY)",
@@ -188,7 +188,7 @@ def choose_text(text):
             file = '\n'.join(jokes)
         else:
             file = open(f'texts/{text}.txt').read()
-    except Exception as ex:
+    except Exception:
         # use a default/fallback quote in case there's
         # a problem with loading content from file/API
         file = ('The first 90 percent of the code accounts for'
@@ -221,6 +221,7 @@ def get_lines_for_typing(text, lines, mode):
 
 
 class TypingText:
+    """Class for enclosing all methods required to run the application"""
 
     def __init__(self):
         self.practiced = False
@@ -235,6 +236,14 @@ class TypingText:
             )
 
     def calculate_results(self, text_a, text_b):
+        '''
+        Monitor user performance on each typing task and provide feedback
+        upon completion. Results breakdown includes total time taken,
+        accuracy level and words per minute (wpm). A global variable is also
+        used as a flag to incrementally reveal a secret password based on
+        steady increases in the user's typing speed. Farewell message also
+        communicated to the user should they opt to discontinue the game.
+        '''
         if not self.finished:
             # Work out time spent typing...
             self.total_time = time.time() - self.start_time
@@ -358,6 +367,15 @@ class TypingText:
             sys.exit()
 
     def activate(self):
+        """
+        Primary in-game method for triggering various helper functions to
+        configure typing activity while looping through conditional logic
+        (i.e. choices based on user input). User is first of all asked if
+        they'd like to practice their typing before starting the game proper.
+        Following on from this, they are asked to select both a target text
+        and the number of lines they wish to type. They are also asked if they
+        know the secret password (which can be entered to unlock 'Beast Mode').
+        """
         self.game_restart()
         self.running = True
         answers = prompt(questions, style=custom_style_2)
@@ -450,7 +468,6 @@ class TypingText:
                 else:
                     for i in range(13):
                         self.text_typed += (input() + '\n')
-            # print(len(self.text_typed[:-1]))
             self.calculate_results(
                 stringified_text_for_typing, self.text_typed[:-1]
                 )
@@ -459,6 +476,10 @@ class TypingText:
             self.practiced = True
 
     def game_restart(self):
+        """
+        Method for resetting game state by returning main properties to
+        original values.
+        """
         self.reset = False
         self.finished = False
         self.text_typed = self.text_to_be_typed = ''

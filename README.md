@@ -417,6 +417,8 @@ This site has been created for development purposes only.
 
 ['From virtualenv, pip freeze > requirements.txt give TONNES of garbage! How to trim it out?'](https://stackoverflow.com/a/41707616/12176426)
 
+['12 Beginner Python Projects - Coding Course'](https://www.youtube.com/watch?v=8ext9G7xspg) (Kylie Ying/freeCodeCamp)
+
 ['History of Python' > 'Version 3'](https://en.wikipedia.org/wiki/History_of_Python#Version_3) (Wikipedia)
 
 ['Using global variables in a function'](https://stackoverflow.com/questions/423379/using-global-variables-in-a-function) (Stack Overflow)
@@ -459,6 +461,8 @@ pyjokes: "One line jokes for programmers (jokes as a service)" - [GitHub](https:
 
 ### Bugs (+/- Bug Fixes):
 
+![Bug: ValueError showing in deployment terminal](docs/images/screenshots/bugs/bug-valueerror.png)
+
 Blinking ANSI code?
 
 Prevent pasted-in text from validating
@@ -470,3 +474,5 @@ Prevent pasted-in text from validating
 - real-time user feedback, e.g. incorrectly-typed text highlighted in red so that the user can go back and correct mistake(s) (cf. [this example](https://mithil467.github.io/mitype/))
 
 - Add padding to terminal output (chiefly the target text and/or user input) to improve readability and overall appearance (cf. [this blog post](https://stackabuse.com/padding-strings-in-python/))
+
+- Bind secret password reveal functionality not just to typing speed, but also to accuracy
