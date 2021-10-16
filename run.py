@@ -10,6 +10,8 @@ import random
 
 import time
 
+import sys
+
 import pyjokes
 
 from pprint import pprint
@@ -103,9 +105,9 @@ print(
     f"{colours['CBOLD']}{colours['CBLUE']}Welcome to {colours['CBLINK']}The Zen of Typing!{colours['CBLINKSTOP']}{colours['CEND']}")
 print('')
 print(
-    f"{colours['CYELLOW']}The only place you can improve your typing speed and{colours['CEND']}")
+    f"{colours['CBOLD']}{colours['CYELLOW']}The only place you can improve your typing speed and{colours['CEND']}")
 print(
-    f"{colours['CYELLOW']}brush up on some programming principles at the same time...{colours['CEND']}")
+    f"{colours['CBOLD']}{colours['CYELLOW']}brush up on some programming principles at the same time...{colours['CEND']}")
 print('')
 
 questions = [
@@ -248,6 +250,14 @@ class TypingText:
             if answer['restart_game']:
                 print('')
                 self.activate()
+            print('')
+            print(
+                f"{colours['CBOLD']}{colours['CBLUE']}Thanks for playing The Zen of Typing!{colours['CEND']}")
+            print('')
+            print(
+                f"{colours['CBOLD']}{colours['CYELLOW']}See you again soon ;){colours['CEND']}")
+            print('')
+            sys.exit()
 
     def activate(self):
         self.game_restart()
