@@ -264,6 +264,9 @@ class TypingText:
                 print('')
                 print(f"{colours['CBOLD']}{colours['CBLINK']}{colours['CYELLOW']}You should now have all four characters of the secret password...{colours['CEND']}")
                 print(f"{colours['CBOLD']}{colours['CBLINK']}{colours['CYELLOW']}Don't forget to use it in order to unlock BEAST MODE!{colours['CEND']}")
+            else:
+                print('')
+                print(f"{colours['CBOLD']}{colours['CBLINK']}{colours['CYELLOW']}Keep playing to reveal the secret password and unlock BEAST MODE!{colours['CEND']}")
             print('')
             answer = prompt(question_restart, style=custom_style_2)
             if answer['restart_game']:
@@ -294,7 +297,7 @@ class TypingText:
             print('')
             if answers['secret_password'] and answers['enter_password'] != 'PEP8':
                 (f"{colours['CBOLD']}{colours['CGREEN']}Not bad!{colours['CEND']}")
-                print(f"{colours['CBOLD']}{colours['CRED']}Sorry, that password is incorrect.{colours['CEND']}")
+                print(f"{colours['CBOLD']}{colours['CRED']}Sorry, that password is incorrect!{colours['CEND']}")
                 print('')
             if answers['text'] != "can't decide. choose one for me!":
                 print(f"{colours['CBOLD']}{colours['CBLUE']}You have chosen to type:{colours['CEND']}")
