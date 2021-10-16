@@ -2,6 +2,8 @@
 
 # The Zen of Typing
 
+![Python logo wallpaper background](docs/images/bg-python.png)
+
 #### [Live link to deployed project](https://zen-of-typing.herokuapp.com/)
 
 ![in-game screenshot of deployment terminal](docs/images/screenshots/in-game-deployed.png)
@@ -36,7 +38,7 @@ Having selected both a text and the number of lines to be typed, the user is nex
 
 ### Existing features:
 
-- #### [Landing page:](https://going-for-gold.netlify.app/)
+- #### Python-centric ASCII art hero image and colour scheme
 
   <details>
     <summary>
@@ -47,76 +49,60 @@ Having selected both a text and the number of lines to be typed, the user is nex
 
 </details>
 
-- #### [Medallists page:](https://going-for-gold.netlify.app/medallists)
+- #### Immersive sequential flow of multiple-choice menus and questions (enabled c/o the [PyInquirer module](https://github.com/CITGuru/PyInquirer))
 
   <details>
     <summary>
     <b>click to view</b>
     </summary>
 
-  | ![](docs/images/screenshots/medallists-mobile.png) | ![](docs/images/screenshots/medallists-tablet.png) | ![](docs/images/screenshots/medallists-desktop.png) |
-  | :------------------------------------------------: | :------------------------------------------------: | :-------------------------------------------------: |
-  |                       mobile                       |                       tablet                       |                       desktop                       |
-
-  The Medallists page is the site's main page content-wise. In its default state, it gives a list of all 93 medal-winning countries from the Tokyo Games with a breakdown of the following data for each individual country:
-
-  - National flag (pulled from a REST Countries API endpoint)
-  - Country name (as above)
-  - Population (as above)
-  - Gold medals won at Tokyo 2020 (taken from the app's local data file)
-  - Gold medals per one million citizens (calculated from the two relevant figures above)
-  - Total medals won at Tokyo 2020 (taken from the app's local data file)
-  - Total medals per one million citizens (calculated from the two relevant figures above)
-
-  | ![](docs/images/screenshots/medallists-ui-europe.png) | ![](docs/images/screenshots/medallists-ui-africa.png) | ![](docs/images/screenshots/medallists-ui-americas.png) | ![](docs/images/screenshots/medallists-ui-asia.png) | ![](docs/images/screenshots/medallists-ui-oceania.png) |
-  | :---------------------------------------------------: | :---------------------------------------------------: | :-----------------------------------------------------: | :-------------------------------------------------: | :----------------------------------------------------: |
-  |                     blue (Europe)                     |                    black (Africa)                     |                     red (Americas)                      |                    yellow (Asia)                    |                    green (Oceania)                     |
-
-  In addition to this, the UI for each medallist includes a dynamically-rendered background image consisting of the aforementioned Tokyo 2020 emblem in the relevant Olympic ring colour that corresponds to that country's continent. Initially, these `.container-flag` elements were being differentially coloured based on their index number (using array iteration). It was actually my mentor Tim who alerted me to the fact that the five Olympic ring colours [represent the five main continents](https://en.wikipedia.org/wiki/Olympic_symbols#:~:text=The%201949%E2%80%9350%20edition%20of,%2C%20and%20red%20for%20America%22). After learning of this, I was able to conditionally target the `background-image` property of each of these elements based on the "region" property value of each corresponding item returned from the REST Countries API endpoint.
-
-  | ![](docs/images/screenshots/medallists-ui-icon.png) |
-  | :-------------------------------------------------: |
-  |                    `<FaAward />`                    |
-
-  One more feature displayed for each medallist is a dynamically-rendered React Icon with numerical ranking corresponding to that particular country's standing (these values are bound to the index of each country when iterating through the overall array)
+  - From a UX standpoint, the [closed-ended](https://en.wikipedia.org/wiki/Closed-ended_question) nature of almost all of the questions with which the user is presented minimises the risk of error and all but eliminates the possibility of invalid user input. This saves time (for both developer and user), while also delivering a neat and concise pre-game interface.
 
 </details>
 
-- #### [About page:](https://going-for-gold.netlify.app/about)
+- #### Warm-up/Practice option
 
   <details>
     <summary>
     <b>click to view</b>
     </summary>
 
-  | ![](docs/images/screenshots/about-ui-mobile.jpg) | ![](docs/images/screenshots/about-ui-tablet.jpg) | ![](docs/images/screenshots/about-ui-desktop.jpg) |
-  | :----------------------------------------------: | :----------------------------------------------: | :-----------------------------------------------: |
-  |                      mobile                      |                      tablet                      |                      desktop                      |
-
-  As you might expect, the site's About page presents users with a brief rundown on the site's purpose and intentions - all done in an engaging and aesthetically-pleasing manner. The parent `.container-about` element has been styled with a faint Tokyo 2020 logo `background-image`, while the page's main UI elements (heading, paragraphs of text and a bright CTA button) all transition into view thanks to staggered CSS `animation` effects on tablet and desktop (see image below)
-
-  | ![](docs/images/screenshots/going-for-gold-about-animation-desktop.gif) |
-  | :---------------------------------------------------------------------: |
-  |                          About page animation                           |
+  - Not everyone is a super-fast expert typist. And likewise, not everyone produces their finest work under pressure. Bearing this in mind, The Zen of Typing allows users to practice their typing in a relaxed fashion without having to worry about performance metrics (the practice mode is not 'recorded', i.e. no speed/accuracy calculations are made). They may then progress to the stricter in-game conditions whenever they feel ready.
 
 </details>
 
-- #### [Contact page:](https://going-for-gold.netlify.app/contact)
+- #### Randomised text selection fallback option
 
   <details>
     <summary>
     <b>click to view</b>
     </summary>
 
-  | ![](docs/images/screenshots/contact-ui-mobile.jpg) | ![](docs/images/screenshots/contact-ui-tablet.jpg) | ![](docs/images/screenshots/contact-ui-desktop.jpg) |
-  | :------------------------------------------------: | :------------------------------------------------: | :-------------------------------------------------: |
-  |                       mobile                       |                       tablet                       |                       desktop                       |
+  - [Hick's Law](https://lawsofux.com/hicks-law/) states that "the time it takes to make a decision increases with the number and complexity of choices". If, therefore, the user feels somewhat overwhelmed at having to choose between the six available target texts, they can simply ask the [random module](https://docs.python.org/3/library/random.html) to help lighten their cognitive load by deciding for them.
 
-  As with most Contact pages, a `form` element is the centrepiece of this section of the site. Going for Gold's form boasts a neumorphic design, and is vertically and horizontally centred across all device sizes. A concise form submission sequence comprising two `input` fields followed by a `textarea` and a 'SEND' button means the user is not bombarded with too many requests or criteria. Strict form validation (outlined in detail below) has nevertheless been put into place to constrain user input. Once the form has been successfully submitted, the user is taken to a custom confirmation screen, which also contains a helpful CTA button guiding them back to the Home page.
+</details>
 
-  | ![](docs/images/screenshots/contact-confirmation-ui-mobile.jpg) | ![](docs/images/screenshots/contact-confirmation-ui-tablet.jpg) | ![](docs/images/screenshots/contact-confirmation-ui-desktop.jpg) |
-  | :-------------------------------------------------------------: | :-------------------------------------------------------------: | :--------------------------------------------------------------: |
-  |                             mobile                              |                             tablet                              |                             desktop                              |
+- #### Programming-focused target text content
+
+  <details>
+    <summary>
+    <b>click to view</b>
+    </summary>
+
+  - Five of the six available target texts are directly related to computer programming, with a strong Python emphasis. While it would arguably have been simpler to work with generic/filler content, this way the Zen of Typing user stands to kill two birds with one stone (so to speak) by rounding out their coding knowledge as they're working on their typing speed.
+
+</details>
+
+- #### API integration
+
+  <details>
+    <summary>
+    <b>click to view</b>
+    </summary>
+
+  - One of the five programming-related target texts mentioned above is actually a dynamically-generated random list of responses from an end-point associated with the [pyjokes ("jokes as a service") API](https://pyjok.es/).
+
+  ![pyjokes logo](docs/images/icons/logo-pyjokes.png)
 
 </details>
 
@@ -454,6 +440,10 @@ Valentin Bryukhanov's [PEP8 online checker](http://pep8online.com/) was used to 
 ['How to measure elapsed time in Python?'](https://stackoverflow.com/questions/7370801/how-to-measure-elapsed-time-in-python/7370824#7370824) (Stack Overflow)
 
 [PyInquirer: "A Python module for common interactive command line user interfaces"](https://github.com/CITGuru/PyInquirer) (GitHub)
+
+[pyjokes logo](https://pyjok.es/) (pyjokes Docs)
+
+Python background wallpaper [sourced from Reddit](https://www.reddit.com/r/Python/)
 
 Python logo used to create favicon [sourced from Wikipedia](https://en.wikipedia.org/wiki/File:Python-logo-notext.svg)
 
