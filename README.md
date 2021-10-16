@@ -429,11 +429,17 @@ The text content of the project's `sunscreen.txt` file is an abridged version of
 
 ['How to Do Ternary Operator Assignment in Python'](https://www.webucator.com/article/how-to-do-ternary-operator-assignment-in-python/) (Webucator)
 
+Valentin Bryukhanov's [PEP8 online checker](http://pep8online.com/) was used to validate the project's Python code, in line with best practice.
+
+['How to split up a long f-string in python?'](https://stackoverflow.com/questions/48881196/how-to-split-up-a-long-f-string-in-python) (Stack Overflow)
+
 ['Ternary Operator in Python'](https://www.geeksforgeeks.org/ternary-operator-in-python/) (GeeksforGeeks)
 
 ['How to measure elapsed time in Python?'](https://stackoverflow.com/questions/7370801/how-to-measure-elapsed-time-in-python/7370824#7370824) (Stack Overflow)
 
 [PyInquirer: "A Python module for common interactive command line user interfaces"](https://github.com/CITGuru/PyInquirer) (GitHub)
+
+Python logo used to create favicon [sourced from Wikipedia](https://en.wikipedia.org/wiki/File:Python-logo-notext.svg)
 
 ['pep8 warning on regex string in Python, Eclipse'](https://stackoverflow.com/a/19030982/12176426)
 
