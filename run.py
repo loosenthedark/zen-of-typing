@@ -254,6 +254,7 @@ class TypingText:
         self.running = True
         answers = prompt(questions, style=custom_style_2)
         if answers['practice']:
+            answers['secret_password'] = False
             chosen_text = None
             num_of_lines = 'all'
             print('')
@@ -277,7 +278,7 @@ class TypingText:
         text_for_typing = choose_text(chosen_text)
         # test exception handling functionality within get_lines_for_typing fn
         # print(get_lines_for_typing(chosen_text, 'abc'))
-        self.beast = True if answers['secret_password'] and answers['mode'] == 'BEAST MODE' else False
+        self.beast = True if answers['secret_password'] and not answers['practice'] and answers['mode'] == 'BEAST MODE' else False
         text_for_typing = get_lines_for_typing(text_for_typing, num_of_lines, self.beast)
         stringified_text_for_typing = '\n'.join(text_for_typing)
         # stringified_text_for_typing = stringified_text_for_typing[::-1]
