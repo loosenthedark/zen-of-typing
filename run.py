@@ -103,9 +103,9 @@ print(
     f"{colours['CBOLD']}{colours['CBLUE']}Welcome to {colours['CBLINK']}The Zen of Typing!{colours['CBLINKSTOP']}{colours['CEND']}")
 print('')
 print(
-    f"{colours['CBOLD']}{colours['CYELLOW']}The only place you can improve your typing speed and{colours['CEND']}")
+    f"{colours['CYELLOW']}The only place you can improve your typing speed and{colours['CEND']}")
 print(
-    f"{colours['CBOLD']}{colours['CYELLOW']}brush up on some programming principles at the same time...{colours['CEND']}")
+    f"{colours['CYELLOW']}brush up on some programming principles at the same time...{colours['CEND']}")
 print('')
 
 questions = [
@@ -186,7 +186,7 @@ def choose_text(text):
 
     return file
 
-def get_lines_for_typing(text, lines):
+def get_lines_for_typing(text, lines, mode):
     '''
     Customise length of typing text content based on user's preference:
      return either 1, 3 or 5 lines; or else the entire body of stored text.
@@ -195,8 +195,14 @@ def get_lines_for_typing(text, lines):
         lines_for_typing = text.split('\n')
         reversed_lines = [line[::-1] for line in lines_for_typing]
         if lines == 'all':
-            return reversed_lines
-        return reversed_lines[:int(lines)]
+            if mode:
+                return reversed_lines
+            else:
+                return lines_for_typing
+        if mode:
+            return reversed_lines[:int(lines)]
+        else:
+            return lines_for_typing[:int(lines)]
     except Exception as ex:
         print(ex)
 
@@ -205,6 +211,7 @@ class TypingText:
     def __init__(self):
         self.practiced = False
         self.reset = True
+        self.beast = False
         self.started = self.finished = self.running = False
         self.text_typed = self.text_to_be_typed = ''
         self.start_time = self.total_time = self.typing_accuracy = self.wpm = 0
@@ -270,7 +277,8 @@ class TypingText:
         text_for_typing = choose_text(chosen_text)
         # test exception handling functionality within get_lines_for_typing fn
         # print(get_lines_for_typing(chosen_text, 'abc'))
-        text_for_typing = get_lines_for_typing(text_for_typing, num_of_lines)
+        self.beast = True if answers['secret_password'] and answers['mode'] == 'BEAST MODE' else False
+        text_for_typing = get_lines_for_typing(text_for_typing, num_of_lines, self.beast)
         stringified_text_for_typing = '\n'.join(text_for_typing)
         # stringified_text_for_typing = stringified_text_for_typing[::-1]
         # print(len(stringified_text_for_typing))
