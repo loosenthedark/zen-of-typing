@@ -125,7 +125,7 @@ Having selected both a text and the number of lines to be typed, the user is nex
     <b>click to view</b>
     </summary>
 
-  The one 'open-ended' question demanding user input is the secret password prompt. This is handled in a very straightforward binary fashion: if the user enters anything other than the correct (case-sensitive) password, they are informed of their mistake and the game simply continues. This is accomplished via a  
+  The one open-ended question demanding user input is the secret password prompt. This is handled in a straightforward binary fashion: if the user enters anything other than the correct (case-sensitive) password, they are informed of their mistake and the game simply starts as normal. This is accomplished by using a compound if statement within the game class's main `activate()` method. 
 
 </details>
 
@@ -287,24 +287,50 @@ This project has been deployed to [Netlify](https://www.netlify.com/) using cont
 
 ## Deployment
 
+### GitHub
+
 <details>
   <summary>
     <b>click to view</b>
   </summary>
 
-### Netlify:
+This project was developed in a repository built on top of the [Code Institute Python Essentials template repository](https://github.com/Code-Institute-Org/python-essentials-template), thus inheriting the latter's main directory structure and starter files.
 
-This project has been deployed to [Netlify](https://www.netlify.com/) using continuous deployment in sync with [GitHub](https://en.wikipedia.org/wiki/GitHub). A full step-by-step guide to what's involved in setting up this workflow can be found [here](https://www.netlify.com/blog/2016/09/29/a-step-by-step-guide-deploying-on-netlify/)
+Creating the repository from the template involved following each of these steps:
 
-### Forking the GitHub Repository:
+1. On GitHub.com, navigate to the main page of the template repository - in this case, [this page](https://github.com/Code-Institute-Org/python-essentials-template).
+
+2. Above the file list, click **Use this template**.
+
+3. On the next screen, select the account you want to own the repository from the **Owner** drop-down menu.
+
+4. Enter a **Repository name**, as well as an optional **Description**.
+
+5. Choose a repository visibility. NB: To meet Code Institute project submission criteria, this must be set to **Public**.
+
+6. Click **Create repository from template**.
+</details>
+
+### Forking the GitHub Repository
+
+<details>
+  <summary>
+    <b>click to view</b>
+  </summary>
 
 It is possible to fork this GitHub repository to view and/or make changes without affecting the original. This is achieved by following these steps...
 
 1. [**Sign in** to your GitHub account](https://github.com/login) and locate the [relevant repository](https://github.com/loosenthedark/going-for-gold).
 2. Click on **Fork**, located near the top right-hand corner of the repository page.
 3. You will now have a copy of this project's repository in your own GitHub account.
+</details>
 
-### Making a local clone:
+### Making a local clone
+
+<details>
+  <summary>
+    <b>click to view</b>
+  </summary>
 
 It is possible to copy the repository to your local machine so that you can fix merge conflicts, add or remove files and push larger commits without affecting the original project code. Cloning a repository pulls down a full copy of all the repo data that GitHub has at that point in time. See the [GitHub Docs](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository) for further information, and below for a brief summary...
 
@@ -323,7 +349,6 @@ https://github.com/loosenthedark/going-for-gold.git
 8. Your local clone has now been created.
 
 _See the [GitHub Docs](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories) for more information on all of the above processes._
-
 </details>
 
 ## Credits
