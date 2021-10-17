@@ -2,23 +2,19 @@
 
 # Write your code to expect a terminal of 80 characters wide and 24 rows high
 
+# Standard library imports
 from __future__ import print_function, unicode_literals
-
-import textwrap
-
 import random
-
+import sys
+import textwrap
 import time
 
-import sys
-
+# Third-party imports
 import pyjokes
+from PyInquirer import prompt
+from examples import custom_style_2
 
 # from prompt_toolkit.validation import Validator, ValidationError
-
-from PyInquirer import prompt
-
-from examples import custom_style_2
 
 # class PhoneNumberValidator(Validator):
 #     def validate(self, document):

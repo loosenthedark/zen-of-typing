@@ -14,6 +14,11 @@ Users can customise their experience by choosing from a range of options before 
 
 ## How to play
 
+<details>
+    <summary>
+    <b>click to view</b>
+    </summary>
+
 The Zen of Typing is loosely modelled on classic typing programmes such as ['Mavis Beacon Teaches Typing!'](https://en.wikipedia.org/wiki/Mavis_Beacon_Teaches_Typing), which the developer was known to spend countless hours practicing throughout his misspent youth.
 
 The title is also a play on ['The Zen of Python'](https://www.python.org/dev/peps/pep-0020/), Pythoneer [Tim Peters'](https://en.wikipedia.org/wiki/Tim_Peters_(software_engineer)) list of fundamental commandments for the then-nascent programming language, which was first issued in 1999 and has since come to be seen as something of a cornerstone document.
@@ -31,6 +36,7 @@ Having selected both a text and the number of lines to be typed, the user is nex
 - If, on the other hand, they **do** know the secret password (and indicate so by pressing 'Y'), they are prompted to enter it as an input string.
   - If the password they enter happens to be incorrect, they are alerted to this fact by a bold red feedback message, after which the password functionality is discarded and the game begins in the usual fashion (see above)
   - If they enter a correct password, meanwhile, they unlock a bonus submenu offering the chance to acticate the 'Beast Mode' feature (explained in more detail below).
+</details>
 
 ## Features
 
@@ -162,59 +168,51 @@ Having selected both a text and the number of lines to be typed, the user is nex
 
 ## Technologies Used
 
-### Languages:
+### Language(s):
 
 <details>
   <summary>
     <b>click to view</b>
   </summary>
 
-- [HTML5:](https://en.wikipedia.org/wiki/HTML5) used for structuring the site
-- [CSS3:](https://en.wikipedia.org/wiki/Cascading_Style_Sheets) used for styling the site
-- [JavaScript:](https://en.wikipedia.org/wiki/JavaScript) used for site logic and web page behaviour
-- [JSX](<https://en.wikipedia.org/wiki/JSX_(JavaScript)>) used to structure React component rendering throughout the application
+- [Python 3.9.2:](https://www.python.org/downloads/release/python-392/) used to anchor the project and direct all application behaviour
+- [JavaScript:](https://en.wikipedia.org/wiki/JavaScript) used to provide the start script needed to run the Code Institute mock terminal in the browser
+- [HTML](https://en.wikipedia.org/wiki/HTML) used to construct the elements involved in building the mock terminal in the browser
 </details>
 
-### Frameworks/Libraries, APIs, , Projects, Programmes and Tools:
+### Frameworks/Libraries, APIs, Programmes and Tools:
 
 <details>
   <summary>
     <b>click to view</b>
   </summary>
 
-- ES6 imports:
+- Python modules/packages:
 
-  - [React v16.13.1:](https://reactjs.org/) used as a base to create dynamic user interfaces by building and customising modular components, as well as handling state management and rendering that state to the DOM
-  - [ReactDOM v16.13.1:](https://reactjs.org/docs/react-dom.html) used to give the app access to various top-level DOM-specific methods
-  - [React Icons v4.2.0:](https://react-icons.github.io/react-icons/) used to include individual bespoke icons where needed within the project
-  - [react-resize-detector v6.7.6:](https://www.npmjs.com/package/react-resize-detector) used to leverage native browser resize handling to manage element resize events within the app's components
-  - [React Router v5.2.0:](https://reactrouter.com/) used to provide declarative routing for the application
-  - [Create React App v3.4.3:](https://create-react-app.dev/) used to get application development off the ground by overseeing configuration of build tools, bundle optimisation, directory structure etc.
-  - [Google Fonts:](https://fonts.google.com/) used to import the Raleway font into the project's stylesheet
-  - [Visual Studio Code:](https://code.visualstudio.com/) used as the online IDE for the project
-  - [Git:](https://git-scm.com/) used for version control by utilising the Gitpod terminal to commit frequently to Git and push all commits to GitHub
-  - [GitHub:](https://github.com/) used to compile and remotely store the project's codebase following successive local commits initiated from the command line
-  - [Netlify:](https://www.netlify.com/) used to deploy the site and aid workflow in line with serverless continuous deployment best practices
-  - [Fetch API:](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) used to make API requests and retrieve resources and/or responses returned by them
-  - [(React) Context API:](https://reactjs.org/docs/context.html) used to pass data through the app's component tree without having to pass props down manually at every level
-  - [REST Countries API:](https://restcountries.eu/) used to collect population data and flag images corresponding to each of the 93 countries featured in the list(s) of Olympic medal-winners
-  - [EmailJS v3.2.0:](https://t.co/L61tIINT0d?amp=1) used to route messages submitted via the site's [Contact form](https://going-for-gold.netlify.app/contact) to the site owner/developer's email address
-  - [GSAP (GreenSock Animation Platform) v3.7.1:](https://greensock.com/gsap/) imported and used to implement the site's marquee [landing page animation](https://going-for-gold.netlify.app/contact)
-  - [Ezgif image converter:](https://ezgif.com/webp-to-jpg) used to convert several of the project image source files from `.svg` to `png/jp(e)g` formats
-  - [Neumorphism.io:](Neumorphism.io) Open-source 'Soft UI' CSS shadow generator used when styling the site's [Contact form](https://going-for-gold.netlify.app/contact)
-  - [ColorSpace's online colour gradient generator](https://mycolor.space/gradient) was used to apply a metallic shine effect to the gold-, silver- and bronze-coloured landing page buttons, and to create the linear gradients found elsewhere
-  - [Box Shadow CSS Generator:](https://cssgenerator.org/box-shadow-css-generator.html) Used to add subtle shadow styling to most clickable elements across the site
-  - The project's favicon was generated using the [free online favicon.io tool](https://favicon.io/favicon-converter/)
-  - The [JPG to PNG online editing tool](https://jpg2png.com/) was used to convert a `.jpeg` version of the Tokyo 2020 logo to `.png` format
-  - [TinyJPG:](https://tinyjpg.com/) used for image compression
-  - [PicResize:](https://picresize.com/) used to crop and resize images
-  - [Brackets](http://brackets.io/) (desktop app version): used to make colouration edits to SVG files
-  - [Kapwing:](https://www.kapwing.com/) used as the project's go-to content editing resource, e.g. to create the [animated](#going-for-gold) [screenshots](#about-page) featured in this README
-  - [W3Schools HTML Color Picker:](https://www.w3schools.com/colors/colors_picker.asp) used for generating on-the-fly colour pairings and modifications (lightening, darkening etc. of core project colours)
-  - [Responsively App:](https://responsively.app/) Used to frequently test and inspect responsive layout and component rendering as the project took shape
-  - [WebAIM (contrast checker):](https://webaim.org/resources/contrastchecker/) / [WAVE Web Accessibility Evaluation Tool](https://wave.webaim.org/) used to ensure site foreground and background colour contrasts meet [WCAG 2 accessibility requirements](https://webaim.org/articles/contrast/)
-  - [Can I Use:](https://caniuse.com/) browser compatibility tables used to cross-reference the viability of implementing certain HTML5 elements, CSS3 properties, file formats and more
-  - [Editor.md:](https://pandao.github.io/editor.md/en.html) used to format project Markdown in line with best practices
+  - Standard library imports:
+
+    - [`python-future`:](https://python-future.org/index.html) used to ensure a fully Python 2/3-compatible codebase
+    - [`random`:](https://docs.python.org/3/library/random.html) used to implement pseudo-random number generation
+    - [`sys`:](https://docs.python.org/3/library/sys.html) used to provide various functions and variables that are used to manipulate different parts of the Python runtime environment
+    - [`textwrap`:](https://docs.python.org/3/library/textwrap.html) used for wrapping and formatting of plain text throughout the project (made necessary due to the width and height constraints of the browser mock terminal)
+    - [`time`:](https://docs.python.org/3/library/time.html) used to provide ad hoc stopwatch-like functionality when calculating and recording user typing speed
+
+  - Third-party imports:
+
+    - [PyInquirer:](https://github.com/CITGuru/PyInquirer) used to provide a collection of common interactive command line user interfaces, e.g. for compiling multiple-choice questions and managing in-app hierarchical prompts in an intuitive and efficient manner
+    - [pyjokes:](https://pyjok.es/) used to supply the project with a randomly-assembled feed of one-line programming jokes, which is then repurposed into one of the app's target texts availabel to the user
+    - [Prompt Toolkit:](https://www.npmjs.com/package/react-resize-detector) cross-platform foundational library on top of which PyInquirer (see above) is built
+    - [React Router v5.2.0:](https://reactrouter.com/) used to provide declarative routing for the application
+
+- [Visual Studio Code:](https://code.visualstudio.com/) used as the online IDE for the project
+- [Git:](https://git-scm.com/) used to handle version control throughout the project's evolution
+- [GitHub:](https://github.com/) used to compile and remotely store the project's codebase following successive local commits initiated from the command line
+- [Heroku:](https://heroku.com/) used to deploy the site and aid workflow in line with serverless continuous deployment best practices
+- [pyjokes API:](https://pyjok.es/api/) used to request and compile lists of programming jokes as needed (via the module's `get_jokes` function)
+- [Ezgif image converter:](https://ezgif.com/svg-to-png) used to convert the Python logo used in the creation of a project favicon from `.svg` to `.png` format
+- [PicResize:](https://picresize.com/) used to crop and resize images
+- [Responsively App:](https://responsively.app/) Used to frequently test and inspect responsive layout and component rendering as the project took shape
+- [Editor.md:](https://pandao.github.io/editor.md/en.html) used to format project Markdown in line with best practices
 
 </details>
 
@@ -310,7 +308,7 @@ Creating the repository from the template involved following each of these steps
 6. Click **Create repository from template**.
 </details>
 
-### Forking the GitHub Repository
+### Forking the GitHub repository
 
 <details>
   <summary>
@@ -506,8 +504,6 @@ Where code blocks/snippets/suggestions have been incorporated from external sour
 - I've been fortunate enough to be paired with an incredibly helpful and approachable mentor in [Tim Nelson](https://github.com/TravelTimN). He has been on hand throughout this project's evolution to offer pointers, timely feedback and guidance. Cheers, Tim!
 - My better half Ana deserves a medal, not just a mention, for all her constant support and encouragement. She also conducted plenty of ad hoc testing on a range of devices, and it was she who suggested I speed up the background barista video above the fold on desktop 😁
 
-![Brew Barberista responsive footer device mockups](docs/images/screenshots/mockups/brew-barberista-footer.png)
-
 ## Notice
 
 This site has been created for development purposes only.
@@ -539,6 +535,8 @@ The text content of the project's `sunscreen.txt` file is an abridged version of
 ['How to Do Ternary Operator Assignment in Python'](https://www.webucator.com/article/how-to-do-ternary-operator-assignment-in-python/) (Webucator)
 
 Valentin Bryukhanov's [PEP8 online checker](http://pep8online.com/) was used to validate the project's Python code, in line with best practice.
+
+['Absolute vs Relative Imports in Python'](https://realpython.com/absolute-vs-relative-python-imports/) (Real Python)
 
 ['How to split up a long f-string in python?'](https://stackoverflow.com/questions/48881196/how-to-split-up-a-long-f-string-in-python) (Stack Overflow)
 

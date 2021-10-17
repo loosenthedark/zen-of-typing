@@ -1,4 +1,3 @@
 prompt_toolkit==1.0.14
 pyjokes==0.6.0
 PyInquirer==1.0.3
-tweepy==4.1.0
