@@ -42,6 +42,11 @@ Having selected both a text and the number of lines to be typed, the user is nex
 
 ### Existing features:
 
+<details>
+  <summary>
+  <b>click to view</b>
+  </summary>
+
 - #### Python-centric ASCII art hero image and colour scheme
 
   <details>
@@ -131,7 +136,7 @@ Having selected both a text and the number of lines to be typed, the user is nex
     </summary>
 
   The one open-ended question demanding user input is the secret password prompt. This is handled in a straightforward binary fashion: if the user enters anything other than the correct (case-sensitive) password, they are informed of their mistake and the game simply starts as normal. This is accomplished by using a compound if statement within the game class's main `activate()` method. 
-
+</details>
 </details>
 
 ### Potential future features:
@@ -296,6 +301,8 @@ Creating the repository from the template involved following each of these steps
 5. Choose a repository visibility. NB: To meet Code Institute project submission criteria, this must be set to **Public**.
 
 6. Click **Create repository from template**.
+
+_For a more detailed explanation, see ['Creating a repository from a template'](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template) (GitHub Docs)_
 </details>
 
 ### Forking the GitHub repository
@@ -398,9 +405,8 @@ _NB: If you choose to **Enable Automatic Deploys**, Heroku will rebuild the app 
 15. After clicking on the **Deploy Branch** button, you should see a message confirming that "Your app was successfully deployed" followed by a **View** button which can be clicked to launch and view the app.
 </details>
 
-![Python logo wallpaper background](docs/images/bg-python.png)
-
 ## Credits
+![Python logo wallpaper background](docs/images/bg-python.png)
 
 ### Code:
 
@@ -410,20 +416,41 @@ Where code blocks/snippets/suggestions have been incorporated from external sour
     <b>click to view</b>
   </summary>
 
-- ['Bootstrap 4 simple back to top with smooth scroll'](https://bbbootstrap.com/snippets/simple-back-top-smooth-scroll-17111555) (BBBootstrap)
-- ['Show div after 500px scroll'](https://jsfiddle.net/amirsaleem/xpd1wr7n/) (JSFiddle)
-- ['How to crop SVG file within HTML/CSS'](https://stackoverflow.com/questions/37588405/how-to-crop-svg-file-within-html-css/37589395) (Stack Overflow)
-- ['CSS Clipping Path with CSS Shapes'](https://codepen.io/heyitsolivia/pen/EICDK?editors=1100) (CodePen)
-- ['A Complete Guide to Grid'](https://css-tricks.com/snippets/css/complete-guide-grid/) (CSS-Tricks)
-- ['15 Compelling Above the Fold Content Examples to Inspire Your Own'](https://blog.hubspot.com/marketing/above-the-fold) (HubSpot)
-- ['Create a Website With Video Background'](https://www.youtube.com/watch?v=8MgpE2DTTKA) (Traversy Media)
-- ['How do I loop through multiple background videos?'](https://stackoverflow.com/questions/54380721/how-do-i-loop-through-multiple-background-videos) (Stack Overflow)
-- ['How to detect Safari, Chrome, IE, Firefox and Opera browser?'](https://stackoverflow.com/questions/9847580/how-to-detect-safari-chrome-ie-firefox-and-opera-browser) (Stack Overflow)
-- ['How to change the playing speed of videos in HTML5?'](https://stackoverflow.com/questions/3027707/how-to-change-the-playing-speed-of-videos-in-html5)] (Stack Overflow)
-- [’How can one display images side by side in a GitHub README.md?](https://stackoverflow.com/questions/24319505/how-can-one-display-images-side-by-side-in-a-github-readme-md) (Stack Overflow)
-- ['`<details>`: The Details disclosure element'](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details) (MDN Web Docs)
-  - My mentor kindly alerted me to this means of making my README more compact and readable via [his own demo implementation](docs/images/screenshots/details.png)
-- [Morten Rand-Hendriksen](https://twitter.com/mor10)'s [LinkedIn Learning courses](https://www.linkedin.com/learning/instructors/morten-rand-hendriksen) on CSS, and in particular his advice on the principles of [progressive enhancement](docs/images/screenshots/mor10-progressive-enhancement.png) proved especially useful when implementing a CSS grid layout for larger screens
+- ['How to let the user select an input from a finite list?'](https://stackoverflow.com/questions/37565793/how-to-let-the-user-select-an-input-from-a-finite-list#comment100075818_37567304) (Stack Overflow)
+
+- ['How to print colored text to the terminal'](https://stackoverflow.com/a/39452138/12176426) (Stack Overflow)
+
+- ['ANSI escape code'](https://en.wikipedia.org/wiki/ANSI_escape_code#SGR_(Select_Graphic_Rendition)_parameters) (Wikipedia)
+
+- ['Ternary Operator in Python'](https://www.geeksforgeeks.org/ternary-operator-in-python/) (GeeksforGeeks)
+
+- ['How to Do Ternary Operator Assignment in Python'](https://www.webucator.com/article/how-to-do-ternary-operator-assignment-in-python/) (Webucator)
+
+- ['How to measure elapsed time in Python?'](https://stackoverflow.com/questions/7370801/how-to-measure-elapsed-time-in-python/7370824#7370824) (Stack Overflow) (as suggested by my [mentor](#acknowledgments))
+
+- ['PEP 257 -- Docstring Conventions'](https://www.python.org/dev/peps/pep-0257/) (Python.org)
+
+- ['Using global variables in a function'](https://stackoverflow.com/questions/423379/using-global-variables-in-a-function) (Stack Overflow)
+
+- ['How to split up a long f-string in python?'](https://stackoverflow.com/questions/48881196/how-to-split-up-a-long-f-string-in-python) (Stack Overflow)
+
+- ['Absolute vs Relative Imports in Python'](https://realpython.com/absolute-vs-relative-python-imports/) (Real Python)
+
+- ['From virtualenv, pip freeze > requirements.txt give TONNES of garbage! How to trim it out?'](https://stackoverflow.com/a/41707616/12176426)
+
+- [Python icon ASCII art](images/ascii-art.txt) copied from [this GitHub repo](https://github.com/honno/ascii-art) (though the original image source was [this subreddit](https://www.reddit.com/r/Python/comments/ifag14/python_logo_in_colored_ascii_art/))
+
+- [pyjokes logo](https://pyjok.es/) (pyjokes Docs)
+
+- Python background wallpaper [sourced from Reddit](https://www.reddit.com/r/Python/)
+
+- Python logo used to create favicon [sourced from Wikipedia](https://en.wikipedia.org/wiki/File:Python-logo-notext.svg)
+
+<!-- - ['pep8 warning on regex string in Python, Eclipse'](https://stackoverflow.com/a/19030982/12176426) -->
+
+- ['Create Your Own Python Projects'](https://www.linkedin.com/learning/python-projects-14276284/create-your-own-python-projects) (LinkedIn Learning)
+
+- ['12 Beginner Python Projects - Coding Course'](https://www.youtube.com/watch?v=8ext9G7xspg) (Kylie Ying/freeCodeCamp)
 </details>
 
 ### Content:
@@ -505,47 +532,7 @@ This site has been created for development purposes only.
 
 ![Python logo wallpaper background](docs/images/bg-python.png)
 
-['From virtualenv, pip freeze > requirements.txt give TONNES of garbage! How to trim it out?'](https://stackoverflow.com/a/41707616/12176426)
-
-['12 Beginner Python Projects - Coding Course'](https://www.youtube.com/watch?v=8ext9G7xspg) (Kylie Ying/freeCodeCamp)
-
-['Using global variables in a function'](https://stackoverflow.com/questions/423379/using-global-variables-in-a-function) (Stack Overflow)
-
-[Python icon ASCII art](images/ascii-art.txt) copied from [this GitHub repo](https://github.com/honno/ascii-art) (though the original image source was [this subreddit](https://www.reddit.com/r/Python/comments/ifag14/python_logo_in_colored_ascii_art/))
-
-['PEP 257 -- Docstring Conventions'](https://www.python.org/dev/peps/pep-0257/) (Python.org)
-
-['How to let the user select an input from a finite list?'](https://stackoverflow.com/questions/37565793/how-to-let-the-user-select-an-input-from-a-finite-list#comment100075818_37567304) (Stack Overflow)
-
-['How to Do Ternary Operator Assignment in Python'](https://www.webucator.com/article/how-to-do-ternary-operator-assignment-in-python/) (Webucator)
-
-['Absolute vs Relative Imports in Python'](https://realpython.com/absolute-vs-relative-python-imports/) (Real Python)
-
-['How to split up a long f-string in python?'](https://stackoverflow.com/questions/48881196/how-to-split-up-a-long-f-string-in-python) (Stack Overflow)
-
-['Creating a repository from a template'](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template) (GitHub Docs)
-
-['Ternary Operator in Python'](https://www.geeksforgeeks.org/ternary-operator-in-python/) (GeeksforGeeks)
-
-['How to measure elapsed time in Python?'](https://stackoverflow.com/questions/7370801/how-to-measure-elapsed-time-in-python/7370824#7370824) (Stack Overflow)
-
-[PyInquirer: "A Python module for common interactive command line user interfaces"](https://github.com/CITGuru/PyInquirer) (GitHub)
-
-[pyjokes logo](https://pyjok.es/) (pyjokes Docs)
-
-Python background wallpaper [sourced from Reddit](https://www.reddit.com/r/Python/)
-
-Python logo used to create favicon [sourced from Wikipedia](https://en.wikipedia.org/wiki/File:Python-logo-notext.svg)
-
-['pep8 warning on regex string in Python, Eclipse'](https://stackoverflow.com/a/19030982/12176426)
-
-['How to print colored text to the terminal'](https://stackoverflow.com/a/39452138/12176426) (Stack Overflow)
-
-['ANSI escape code'](https://en.wikipedia.org/wiki/ANSI_escape_code#SGR_(Select_Graphic_Rendition)_parameters) (Wikipedia)
-
-['Convert Images to ASCII Art'](https://manytools.org/hacker-tools/convert-images-to-ascii-art) (manytools.org)
-
-['Create Your Own Python Projects'](https://www.linkedin.com/learning/python-projects-14276284/create-your-own-python-projects) (LinkedIn Learning)
+************************************************
 
 ### Bugs (+/- Bug Fixes):
 
