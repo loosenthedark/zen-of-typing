@@ -16,7 +16,7 @@ Users can customise their experience by choosing from a range of options before 
 
 <details>
     <summary>
-    <b>click to view</b>
+    click to view
     </summary>
 
 The Zen of Typing is loosely modelled on classic typing programmes such as ['Mavis Beacon Teaches Typing!'](https://en.wikipedia.org/wiki/Mavis_Beacon_Teaches_Typing), which the developer was known to spend countless hours practicing throughout his misspent youth.
@@ -26,6 +26,8 @@ The Zen of Typing is loosely modelled on classic typing programmes such as ['Mav
 The title is also a play on ['The Zen of Python'](https://www.python.org/dev/peps/pep-0020/), Pythoneer [Tim Peters'](https://en.wikipedia.org/wiki/Tim_Peters_(software_engineer)) list of fundamental commandments for the then-nascent programming language, which was first issued in 1999 and has since come to be seen as something of a cornerstone document.
 
 To begin, a welcome message is communicated on the start screen and the user is asked if they would like to warm up by tackling a practice text (which is subsequently revealed to be [Tom Cargill's humorous observation now known as the 'ninety-ninety rule'](https://en.wikipedia.org/wiki/Ninety%E2%80%93ninety_rule)).
+
+![How to play screenshot 1](docs/images/screenshots/how-to-play/how-to-play-1.png)
 
 Following this optional practice session - which they can take as many times as they wish - the user is given a multiple-choice menu of target texts, from which they must choose one by using the Up, Down and Enter keys on their keyboard. There are six texts in all, each of which is denoted by a slightly cryptic title/acronym. If the user finds that they are struggling to decide on a text, they may opt to effectively 'roll the dice' by asking the computer to pick one at random for them.
 
@@ -46,7 +48,7 @@ Having selected both a text and the number of lines to be typed, the user is nex
 
 <details>
   <summary>
-  <b>click to view</b>
+  click to view
   </summary>
 
 ![ASCII art typewriter](docs/images/ascii-art-typewriter.jpg)
@@ -54,7 +56,7 @@ Having selected both a text and the number of lines to be typed, the user is nex
 - #### Python-centric ASCII art hero image and colour scheme
   <details>
     <summary>
-    <b>click to view</b>
+    click to view
     </summary>
 
 
@@ -64,7 +66,7 @@ Having selected both a text and the number of lines to be typed, the user is nex
 - #### Immersive sequential flow of multiple-choice menus and questions (enabled c/o the [PyInquirer module](https://github.com/CITGuru/PyInquirer))
   <details>
     <summary>
-    <b>click to view</b>
+    click to view
     </summary>
 
   From a UX standpoint, the [closed-ended](https://en.wikipedia.org/wiki/Closed-ended_question) nature of almost all of the questions with which the user is presented minimises the risk of error and all but eliminates the possibility of invalid user input. This saves time (for both developer and user), while also delivering a neat and concise pre-game interface.
@@ -73,7 +75,7 @@ Having selected both a text and the number of lines to be typed, the user is nex
 - #### Warm-up/Practice option
   <details>
     <summary>
-    <b>click to view</b>
+    click to view
     </summary>
 
   Not everyone is a super-fast expert typist. Similarly, not everyone produces their finest work under pressure. Bearing this in mind, The Zen of Typing allows users to practice their typing in a relaxed fashion without having to worry about performance metrics (the practice mode is not 'recorded', i.e. no speed/accuracy calculations are made). They may then progress to the stricter in-game conditions whenever they feel ready.
@@ -82,7 +84,7 @@ Having selected both a text and the number of lines to be typed, the user is nex
 - #### Randomised text selection fallback option
   <details>
     <summary>
-    <b>click to view</b>
+    click to view
     </summary>
 
   [Hick's Law](https://lawsofux.com/hicks-law/) states that "the time it takes to make a decision increases with the number and complexity of choices". If, therefore, the user feels somewhat overwhelmed at having to choose between the six available target texts, they can simply ask the [random module](https://docs.python.org/3/library/random.html) to help lighten their cognitive load by deciding for them.
@@ -91,7 +93,7 @@ Having selected both a text and the number of lines to be typed, the user is nex
 - #### Programming-themed target text content
   <details>
     <summary>
-    <b>click to view</b>
+    click to view
     </summary>
 
   Five of the six available target texts are directly related to computer programming, with a strong Python emphasis. While it would arguably have been simpler to work with generic/filler content, this way the Zen of Typing user stands to kill two birds with one stone (so to speak) by rounding out their coding knowledge as they're working on their typing speed.
@@ -100,7 +102,7 @@ Having selected both a text and the number of lines to be typed, the user is nex
 - #### API integration
   <details>
     <summary>
-    <b>click to view</b>
+    click to view
     </summary>
 
   One of the five programming-related target texts mentioned above is actually a dynamically-generated random list of responses from an end-point associated with the [pyjokes ("jokes as a service") API](https://pyjok.es/).
@@ -111,7 +113,7 @@ Having selected both a text and the number of lines to be typed, the user is nex
 - #### Gamification
   <details>
     <summary>
-    <b>click to view</b>
+    click to view
     </summary>
 
   One surefire way to drive user engagement is to harness the principles of [operant conditioning](https://en.wikipedia.org/wiki/Operant_conditioning) when designing an interactive application. The Zen of Typing adheres to this objective on at least two fronts:
@@ -122,7 +124,7 @@ Having selected both a text and the number of lines to be typed, the user is nex
   - #### Input validation and error-checking
   <details>
     <summary>
-    <b>click to view</b>
+    click to view
     </summary>
 
   The one open-ended question demanding user input is the secret password prompt. This is handled in a straightforward binary fashion: if the user enters anything other than the correct (case-sensitive) password, they are informed of their mistake and the game simply starts as normal. This is accomplished by using a compound if statement within the game class's main `activate()` method.
@@ -134,7 +136,7 @@ Having selected both a text and the number of lines to be typed, the user is nex
 
 <details>
   <summary>
-  <b>click to view</b>
+  click to view
   </summary>
 
 ![ASCII art computer](docs/images/ascii-art-computer.jpg)
@@ -155,7 +157,7 @@ Having selected both a text and the number of lines to be typed, the user is nex
 
 <details>
   <summary>
-    <b>click to view</b>
+    click to view
   </summary>
 
 - [Python 3.9.2:](https://www.python.org/downloads/release/python-392/) used to anchor the project and direct all application behaviour
@@ -167,7 +169,7 @@ Having selected both a text and the number of lines to be typed, the user is nex
 
 <details>
   <summary>
-    <b>click to view</b>
+    click to view
   </summary>
 
 - Python modules/packages:
@@ -203,7 +205,7 @@ Having selected both a text and the number of lines to be typed, the user is nex
 
 <details>
   <summary>
-    <b>click to view</b>
+    click to view
   </summary>
 
 A `TypingText` class has been used as the main application model.
@@ -234,12 +236,14 @@ It was not deemed necessary to create any instances of this class, as the game f
 
 <details>
   <summary>
-    <b>click to view</b>
+    click to view
   </summary>
 
 ### Bugs:
-
-This project has been deployed to [Netlify](https://www.netlify.com/) using continuous deployment in sync with [GitHub](https://en.wikipedia.org/wiki/GitHub). A full step-by-step guide to what's involved in setting up this workflow can be found [here](https://www.netlify.com/blog/2016/09/29/a-step-by-step-guide-deploying-on-netlify/)
+  <details>
+      <summary>
+      click to view
+      </summary>
 
 #### Solved Bugs:
 
@@ -248,14 +252,20 @@ It is possible to copy the repository to your local machine so that you can fix 
 #### Remaining Bugs:
 
 It is possible to copy the repository to your local machine so that you can fix merge conflicts, add or remove files and push larger commits without affecting the original project code. Cloning a repository pulls down a full copy of all the repo data that GitHub has at that point in time. See the [GitHub Docs](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository) for further information, and below for a brief summary...
+      </details>
 
 ### Validation:
+  <details>
+      <summary>
+      click to view
+      </summary>
 
-- Valentin Bryukhanov's [online validation tool](http://pep8online.com/) was used to ensure that all of the project's Python source code is [Pep 8-compliant](https://legacy.python.org/dev/peps/pep-0008/). This checking was done by simply copying and pasting the contents of both the `run.py` file into the relevant field and clicking on **Check code**. Initially a number of non-compliance errors were returned; these were mostly in the form of "E501: line too long" messages. After making all necessary modifications, the Python code now passes through this validator without any problems:
+Valentin Bryukhanov's [online validation tool](http://pep8online.com/) was used to ensure that all of the project's Python source code is [Pep 8-compliant](https://legacy.python.org/dev/peps/pep-0008/). This checking was done by simply copying and pasting the contents of both the `run.py` file into the relevant field and clicking on **Check code**. Initially a number of non-compliance errors were returned; these were mostly in the form of "E501: line too long" messages. After making all necessary modifications, the Python code now passes through this validator without any problems:
 
 ![run.py validation](docs/images/validation/python-validation.png)
 
-![Python validation icon](https://raw.githubusercontent.com/loosenthedark/clipadvisor-flask-app/master/docs/images/validation/python-validation-icon.png)
+![Python validation icon](docs/images/icons/icon-python-validation.png)
+      </details>
 
 </details>
 
@@ -265,7 +275,7 @@ It is possible to copy the repository to your local machine so that you can fix 
 
 <details>
   <summary>
-    <b>click to view</b>
+    click to view
   </summary>
 
 This project was developed in a repository built on top of the [Code Institute Python Essentials template repository](https://github.com/Code-Institute-Org/python-essentials-template), thus inheriting the latter's main directory structure and starter files.
@@ -291,7 +301,7 @@ _For a more detailed explanation, see ['Creating a repository from a template'](
 
 <details>
   <summary>
-    <b>click to view</b>
+    click to view
   </summary>
 
 It is possible to fork this project's GitHub repository to view and/or make changes without affecting the original. This is achieved by following these steps...
@@ -307,7 +317,7 @@ _NB: The steps outlined below assume that you already have [Git](https://git-scm
 
 <details>
   <summary>
-    <b>click to view</b>
+    click to view
   </summary>
 
 It is possible to copy the repository to your local machine so that you can fix merge conflicts, add or remove files and push larger commits without affecting the original project code. Cloning a repository pulls down a full copy of all the repo data that GitHub has at that point in time. See the [GitHub Docs](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository) for further information, and below for a brief summary...
@@ -333,7 +343,7 @@ _See the [GitHub Docs](https://docs.github.com/en/github/creating-cloning-and-ar
 
 <details>
   <summary>
-    <b>click to view</b>
+    click to view
   </summary>
 
 The application is deployed on [**Heroku**](https://heroku.com/), and can be accessed using the following URL: https://zen-of-typing.herokuapp.com/
@@ -343,7 +353,7 @@ The steps involved in deploying to Heroku were as follows:
 1. Create a `requirements.txt` file from the command line, and populate it with a list of project dependencies:
 
   ```
-  pip3 freeze > requirements.txt
+  pip freeze > requirements.txt
   ```
 
 2. Save, commit and push your changes to GitHub.
@@ -384,7 +394,7 @@ _NB: Python must be placed at the top of your app's buildpack list. You can drag
 
 _NB: If you choose to **Enable Automatic Deploys**, Heroku will rebuild the app every time you push a change to GitHub (which is considered best practice in most instances)._
 
-15. After clicking on the **Deploy Branch** button, you should see a message confirming that "Your app was successfully deployed" followed by a **View** button which can be clicked to launch and view the app.
+16. After clicking on the **Deploy Branch** button, you should see a message confirming that "Your app was successfully deployed" followed by a **View** button which can be clicked to launch and view the app.
 </details>
 
 ## Credits
@@ -394,7 +404,7 @@ _NB: If you choose to **Enable Automatic Deploys**, Heroku will rebuild the app 
 Where code blocks/snippets/suggestions have been incorporated from external sources into this project's code, these have been noted through the use of comments. Beyond this, the developer made use of the following articles, workarounds and learning resources while building the site:
 <details>
   <summary>
-    <b>click to view</b>
+    click to view
   </summary>
 
 - ['How to let the user select an input from a finite list?'](https://stackoverflow.com/questions/37565793/how-to-let-the-user-select-an-input-from-a-finite-list#comment100075818_37567304) (Stack Overflow)
@@ -429,7 +439,7 @@ Where code blocks/snippets/suggestions have been incorporated from external sour
 ### Content
 <details>
   <summary>
-    <b>click to view</b>
+    click to view
   </summary>
 
 - All of the `body` text (game instructions, user feedback etc.) was composed by the developer
@@ -454,7 +464,7 @@ Where code blocks/snippets/suggestions have been incorporated from external sour
 ### Media
 <details>
   <summary>
-    <b>click to view</b>
+    click to view
   </summary>
 
 | Media title/description  | Media format  | Credit  | Link to original media source(s)  | 
