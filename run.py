@@ -1,7 +1,5 @@
 """This is the Zen of Typing main app script"""
 
-# Write your code to expect a terminal of 80 characters wide and 24 rows high
-
 # Standard library imports
 from __future__ import print_function, unicode_literals
 import random
@@ -34,6 +32,7 @@ from examples import custom_style_2
 #                 message='Please enter a number',
 #                 cursor_position=len(document.text))  # Move cursor to end
 
+# dictionary of target texts
 texts = {
     "dry": "Don't Repeat Yourself (DRY)",
     "oop": "Object-Oriented Programming (OOP)",
@@ -43,6 +42,8 @@ texts = {
     "jokes": 'pyjokes: "programmer jokes as a service"'
 }
 
+# code block adapted from
+# https://stackoverflow.com/questions/287871/how-to-print-colored-text-to-the-terminal/39452138#39452138
 colours = {
     'CEND': '\33[0m',
     'CBOLD': '\33[1m',
@@ -90,6 +91,7 @@ colours = {
     'CWHITEBG2': '\33[107m'
 }
 
+# Python logo ASCII art file copied from https://github.com/honno/ascii-art
 ascii_art = open('images/ascii-art.txt').read()
 print(
     f"{colours['CBOLD']}{ascii_art}{colours['CEND']}")
@@ -109,6 +111,8 @@ print(
     f"principles at the same time...{colours['CEND']}")
 print('')
 
+# code block adapted from
+# https://github.com/CITGuru/PyInquirer/tree/master/examples
 questions = [
     {
         'type': 'confirm',
@@ -474,4 +478,6 @@ class TypingText:
         self.start_time = self.total_time = self.wpm = 0
 
 if __name__ == '__main__':
+    # game activation method is immediately called
+    # in order to launch the application
     TypingText().activate()
