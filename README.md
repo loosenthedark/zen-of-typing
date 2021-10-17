@@ -57,6 +57,7 @@ Having selected both a text and the number of lines to be typed, the user is nex
     <b>click to view</b>
     </summary>
 
+
   The prevalent blue and yellow design palette both draws the user's attention and reinforces the fact that this is very much a [Python](https://en.wikipedia.org/wiki/File:Python-logo-notext.svg) application. Elsewhere, semantic text feedback is displayed in a familiar and intuitive fashion, e.g. error messages in red, success alerts in green. While many terminal projects can look drab and monotone, it was the developer's intention that The Zen of Typing should be anything but.
     </details>
 
@@ -250,7 +251,11 @@ It is possible to copy the repository to your local machine so that you can fix 
 
 ### Validation:
 
-This project has been deployed to [Netlify](https://www.netlify.com/) using continuous deployment in sync with [GitHub](https://en.wikipedia.org/wiki/GitHub). A full step-by-step guide to what's involved in setting up this workflow can be found [here](https://www.netlify.com/blog/2016/09/29/a-step-by-step-guide-deploying-on-netlify/)
+- Valentin Bryukhanov's [online validation tool](http://pep8online.com/) was used to ensure that all of the project's Python source code is [Pep 8-compliant](https://legacy.python.org/dev/peps/pep-0008/). This checking was done by simply copying and pasting the contents of both the `run.py` file into the relevant field and clicking on **Check code**. Initially a number of non-compliance errors were returned; these were mostly in the form of "E501: line too long" messages. After making all necessary modifications, the Python code now passes through this validator without any problems:
+
+![run.py validation](docs/images/validation/python-validation.png)
+
+![Python validation icon](https://raw.githubusercontent.com/loosenthedark/clipadvisor-flask-app/master/docs/images/validation/python-validation-icon.png)
 
 </details>
 
@@ -458,6 +463,8 @@ Where code blocks/snippets/suggestions have been incorporated from external sour
 | Python background wallpaper      | `.png`        | [Reddit](https://www.reddit.com/r/Python/)      | [Python subreddit](https://styles.redditmedia.com/t5_2qh0y/styles/bannerBackgroundImage_rluqfluf65a51.png?width=4000&s=f108e1238e79b5d46cf4b999a9915a0eb432fd28)      |
 | Python logo used to create favicon      | `.svg`        | [Wikipedia](https://en.wikipedia.org/wiki/Python_(programming_language))      | [Wikipedia](https://en.wikipedia.org/wiki/File:Python-logo-notext.svg)      |
 | pyjokes logo      | `.png`        | [pyjokes Docs](https://pyjok.es/))      | [pyjokes Docs](https://pyjok.es/images/pyjokes.png)      |
+| Typewriter ASCII art      | `.jpg`        | [Pinterest](https://www.pinterest.ie/pin/367958232045511139/))      | [chelleline.com](https://i.pinimg.com/564x/a3/1c/50/a31c500c310594711c751d4243af56ae.jpg)      |
+| Computer ASCII art      | `.jpg`        | [Pinterest](https://www.pinterest.ie/pin/288441551133848897/))      | [text-mode.tumblr.com/](https://i.pinimg.com/564x/fb/ce/08/fbce08ffcfd01f555e3ae4c681899d7e.jpg)      |
 </details>
 
 ### Acknowledgments:
