@@ -74,7 +74,7 @@ Having selected both a text and the number of lines to be typed, the user is nex
 
   The prevalent blue and yellow design palette both draws the user's attention and reinforces the fact that this is very much a [Python](https://en.wikipedia.org/wiki/File:Python-logo-notext.svg) application. Elsewhere, semantic text feedback is displayed in a familiar and intuitive fashion, e.g. error messages in red, success alerts in green. While many terminal projects can look drab and monotone, it was the developer's intention that The Zen of Typing should be anything but.
 
-  ![Features screenshot 1](ddocs/images/screenshots/features/features-1.png)
+  ![Features screenshot 1](docs/images/screenshots/features/features-1.png)
     </details>
 
 - #### Immersive sequential flow of multiple-choice menus and questions (enabled c/o the [PyInquirer module](https://github.com/CITGuru/PyInquirer))
@@ -93,6 +93,7 @@ Having selected both a text and the number of lines to be typed, the user is nex
     </summary>
 
   Not everyone is a super-fast expert typist. Similarly, not everyone produces their finest work under pressure. Bearing this in mind, The Zen of Typing allows users to practice their typing in a relaxed fashion without having to worry about performance metrics (the practice mode is not 'recorded', i.e. no speed/accuracy calculations are made). They may then progress to the stricter in-game conditions whenever they feel ready.
+  ![Features screenshot 2](docs/images/screenshots/features/features-2.png)
     </details>
 
 - #### Randomised text selection fallback option
@@ -102,6 +103,7 @@ Having selected both a text and the number of lines to be typed, the user is nex
     </summary>
 
   [Hick's Law](https://lawsofux.com/hicks-law/) states that "the time it takes to make a decision increases with the number and complexity of choices". If, therefore, the user feels somewhat overwhelmed at having to choose between the six available target texts, they can simply ask the [random module](https://docs.python.org/3/library/random.html) to help lighten their cognitive load by deciding for them.
+  ![Features screenshot 3](docs/images/screenshots/features/features-3.png)
     </details>
 
 - #### Programming-themed target text content
@@ -111,6 +113,7 @@ Having selected both a text and the number of lines to be typed, the user is nex
     </summary>
 
   Five of the six available target texts are directly related to computer programming, with a strong Python emphasis. While it would arguably have been simpler to work with generic/filler content, this way the Zen of Typing user stands to kill two birds with one stone (so to speak) by rounding out their coding knowledge as they're working on their typing speed.
+  ![Features screenshot 4](docs/images/screenshots/features/features-4.png)
     </details>
 
 - #### API integration
@@ -132,18 +135,21 @@ Having selected both a text and the number of lines to be typed, the user is nex
 
   One surefire way to drive user engagement is to harness the principles of [operant conditioning](https://en.wikipedia.org/wiki/Operant_conditioning) when designing an interactive application. The Zen of Typing adheres to this objective on at least two fronts:
   - The user is provided with instant feedback in the form of a results breakdown, consisting of overall time taken, accuracy and average speed (in words typed per minute). In most cases, this alone should be enough of a hook to encourage them to keep playing in the hope of improving on their current personal best score(s)
+  ![Features screenshot 5](docs/images/screenshots/features/features-5.png)
   - The secret password/'Beast Mode' functionality is initially alluded to in passing, but quickly becomes a central aspect of the game. Crucially, the user is never directly informed as to how and when the next character of this password will be revealed, so they are kept guessing (and wanting more) to a large extent.
+  ![Features screenshot 6](docs/images/screenshots/features/features-6.png)
     </details>
-    
-  - #### Input validation and error-checking
-  <details>
-    <summary>
-    click to view
-    </summary>
 
-  The one open-ended question demanding user input is the secret password prompt. This is handled in a straightforward binary fashion: if the user enters anything other than the correct (case-sensitive) password, they are informed of their mistake and the game simply starts as normal. This is accomplished by using a compound if statement within the game class's main `activate()` method.
-    </details>
-    
+  - #### Input validation and error-checking
+    <details>
+      <summary>
+      click to view
+      </summary>
+
+    The one open-ended question demanding user input is the secret password prompt. This is handled in a straightforward binary fashion: if the user enters anything other than the correct (case-sensitive) password, they are informed of their mistake and the game simply starts as normal. This is accomplished by using a compound if statement within the game class's main `activate()` method.
+    ![Features screenshot 7](docs/images/screenshots/features/features-7.png)
+      </details>
+
   </details>
 
 ### Potential future features:
@@ -298,15 +304,27 @@ Creating the repository from the template involved following each of these steps
 
 1. On GitHub.com, navigate to the main page of the template repository - in this case, [this page](https://github.com/Code-Institute-Org/python-essentials-template).
 
+![Deployment screenshot 1](docs/images/screenshots/deployment/deployment-1.png)
+
 2. Above the file list, click **Use this template**.
+
+![Deployment screenshot 2](docs/images/screenshots/deployment/deployment-2.png)
 
 3. On the next screen, select the account you want to own the repository from the **Owner** drop-down menu.
 
+![Deployment screenshot 3](docs/images/screenshots/deployment/deployment-3.png)
+
 4. Enter a **Repository name**, as well as an optional **Description**.
+
+![Deployment screenshot 4](docs/images/screenshots/deployment/deployment-4.png)
 
 5. Choose a repository visibility. NB: To meet Code Institute project submission criteria, this must be set to **Public**.
 
+![Deployment screenshot 5](docs/images/screenshots/deployment/deployment-5.png)
+
 6. Click **Create repository from template**.
+
+![Deployment screenshot 6](docs/images/screenshots/deployment/deployment-6.png)
 
 _For a more detailed explanation, see ['Creating a repository from a template'](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template) (GitHub Docs)_
 </details>
@@ -323,7 +341,11 @@ It is possible to fork this project's GitHub repository to view and/or make chan
 _NB: The steps outlined below assume that you already have [Git](https://git-scm.com/) set up on your computer - for an overview of how to download, install, and configure Git, consult the [GitHub Docs](https://docs.github.com/en/github-ae@latest/articles/set-up-git)_
 
 1. [**Sign in** to your GitHub account](https://github.com/login) and locate the [relevant repository](https://github.com/loosenthedark/zen-of-typing).
+
 2. Click on **Fork**, located near the top right-hand corner of the repository page.
+
+![Deployment screenshot 7](docs/images/screenshots/deployment/deployment-7.png)
+
 3. You will now have a copy of this project's repository in your own GitHub account.
 </details>
 
@@ -337,10 +359,19 @@ _NB: The steps outlined below assume that you already have [Git](https://git-scm
 It is possible to copy the repository to your local machine so that you can fix merge conflicts, add or remove files and push larger commits without affecting the original project code. Cloning a repository pulls down a full copy of all the repo data that GitHub has at that point in time. See the [GitHub Docs](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository) for further information, and below for a brief summary...
 
 1. [**Sign in** to your GitHub account](https://github.com/login) and locate the [relevant repository](https://github.com/loosenthedark/zen-of-typing).
+
 2. Click on the **Code** dropdown next to the green **Gitpod** button. This will reveal the **Clone** option.
+
+![Deployment screenshot 8](docs/images/screenshots/deployment/deployment-8.png)
+
 3. In order to clone the repository using `HTTPS`, select **HTTPS** and copy the link shown (there is a copy button to the right of the URL).
+
+![Deployment screenshot 9](docs/images/screenshots/deployment/deployment-9.png)
+
 4. Next, open **Git Bash** (see [here](https://git-scm.com/downloads) for an overview of download options, if required).
+
 5. Change the current working directory on your local machine to the location where you want the cloning to be made.
+
 6. Type `git clone` into your IDE terminal followed by the URL you copied in Step 3 above, i.e.
 
 ```
@@ -348,6 +379,7 @@ https://github.com/loosenthedark/zen-of-typing.git
 ```
 
 7. Press **Enter**.
+
 8. Your local clone has now been created.
 
 _See the [GitHub Docs](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories) for more information on all of the above processes._
@@ -384,27 +416,47 @@ _NB: This file comes baked-in with the [Code Institute project template reposito
 
 5. [Log in to your account](https://id.heroku.com/login), and in the top right-hand corner of the **Dashboard** click on **New > Create new app**
 
+![Deployment screenshot 10](docs/images/screenshots/deployment/deployment-10.png)
+
 6. Enter a unique name for your app and select your region. Click on **Create app**.
 
 7. Go to **Settings**
 
+![Deployment screenshot 11](docs/images/screenshots/deployment/deployment-11.png)
+
 8. Click on the **Reveal Config Vars** button in the 'Config Vars' section.
+
+![Deployment screenshot 12](docs/images/screenshots/deployment/deployment-12.png)
 
 9. Enter PORT in the KEY field and 8000 in the VALUE field.
 
+![Deployment screenshot 13](docs/images/screenshots/deployment/deployment-13.png)
+
 10. In the 'Buildpacks' section further down the settings page, click on **Add buildpack**.
 
-11. Select **python** and **nodejs** from the menu of "officially supported buildpacks". 
+![Deployment screenshot 14](docs/images/screenshots/deployment/deployment-14.png)
+
+11. Select **python** and **nodejs** from the menu of "officially supported buildpacks".
+
+![Deployment screenshot 15](docs/images/screenshots/deployment/deployment-15.png)
 
 _NB: Python must be placed at the top of your app's buildpack list. You can drag and drop your buildpacks to reposition them if necessary._
 
 12. Go to **Deploy**.
 
+![Deployment screenshot 16](docs/images/screenshots/deployment/deployment-16.png)
+
 13. Select **GitHub** in the 'Deployment method' section.
+
+![Deployment screenshot 17](docs/images/screenshots/deployment/deployment-17.png)
 
 14. In the 'Connect to GitHub' section, search for the repository you wish to use, then click **Connect**.
 
+![Deployment screenshot 19](docs/images/screenshots/deployment/deployment-19.png)
+
 15. Ensure that the project's main or master branch (depending on which is being used as the primary branch) is selected under 'Deploy a GitHub branch' in the 'Manual deploy' section.
+
+![Deployment screenshot 18](docs/images/screenshots/deployment/deployment-18.png)
 
 _NB: If you choose to **Enable Automatic Deploys**, Heroku will rebuild the app every time you push a change to GitHub (which is considered best practice in most instances)._
 
