@@ -31,15 +31,28 @@ To begin, a welcome message is communicated on the start screen and the user is 
 
 Following this optional practice session - which they can take as many times as they wish - the user is given a multiple-choice menu of target texts, from which they must choose one by using the Up, Down and Enter keys on their keyboard. There are six texts in all, each of which is denoted by a slightly cryptic title/acronym. If the user finds that they are struggling to decide on a text, they may opt to effectively 'roll the dice' by asking the computer to pick one at random for them.
 
+![How to play screenshot 2](docs/images/screenshots/how-to-play/how-to-play-2.png)
+
 Once a text has been chosen, a subsequent menu similarly asks the listener to choose from a range of options, this time corresponding to the number of lines they wish to type. The list is once again navigated using the Up, Down and Enter keys.
+
+![How to play screenshot 3](docs/images/screenshots/how-to-play/how-to-play-3.png)
 
 Having selected both a text and the number of lines to be typed, the user is next asked if they know the secret password. This time they must provide an answer by inputting either 'Y' or 'N' on their keyboard.
 
+![How to play screenshot 4](docs/images/screenshots/how-to-play/how-to-play-4.png)
+
 - If they **don't** know it, a summary of their choices is displayed and the target text is outputted in italics. A bold yellow "Off you go!!!" message signals that the game is underway and they must begin the typing task.
+
+![How to play screenshot 5](docs/images/screenshots/how-to-play/how-to-play-5.png)
 
 - If, on the other hand, they **do** know the secret password (and indicate so by pressing 'Y'), they are prompted to enter it as an input string.
   - If the password they enter happens to be incorrect, they are alerted to this fact by a bold red feedback message, after which the password functionality is discarded and the game begins in the usual fashion (see above)
+
+  ![How to play screenshot 6](docs/images/screenshots/how-to-play/how-to-play-6.png)
+
   - If they enter a correct password, meanwhile, they unlock a bonus submenu offering the chance to acticate the 'Beast Mode' feature (explained in more detail below).
+
+  ![How to play screenshot 7](docs/images/screenshots/how-to-play/how-to-play-7.png)
 </details>
 
 ## Features
@@ -59,8 +72,9 @@ Having selected both a text and the number of lines to be typed, the user is nex
     click to view
     </summary>
 
-
   The prevalent blue and yellow design palette both draws the user's attention and reinforces the fact that this is very much a [Python](https://en.wikipedia.org/wiki/File:Python-logo-notext.svg) application. Elsewhere, semantic text feedback is displayed in a familiar and intuitive fashion, e.g. error messages in red, success alerts in green. While many terminal projects can look drab and monotone, it was the developer's intention that The Zen of Typing should be anything but.
+
+  ![Features screenshot 1](ddocs/images/screenshots/features/features-1.png)
     </details>
 
 - #### Immersive sequential flow of multiple-choice menus and questions (enabled c/o the [PyInquirer module](https://github.com/CITGuru/PyInquirer))
@@ -117,7 +131,7 @@ Having selected both a text and the number of lines to be typed, the user is nex
     </summary>
 
   One surefire way to drive user engagement is to harness the principles of [operant conditioning](https://en.wikipedia.org/wiki/Operant_conditioning) when designing an interactive application. The Zen of Typing adheres to this objective on at least two fronts:
-  - The user is provided with instant feedback in the form of a results breakdown, consisting of overall time taken, accuracy and average speed (in words typed per minute). In most cases, this alone should be enough of a hook to encourage them to keep playing in the hope of improving on their current 'personal best' score(s)
+  - The user is provided with instant feedback in the form of a results breakdown, consisting of overall time taken, accuracy and average speed (in words typed per minute). In most cases, this alone should be enough of a hook to encourage them to keep playing in the hope of improving on their current personal best score(s)
   - The secret password/'Beast Mode' functionality is initially alluded to in passing, but quickly becomes a central aspect of the game. Crucially, the user is never directly informed as to how and when the next character of this password will be revealed, so they are kept guessing (and wanting more) to a large extent.
     </details>
     
