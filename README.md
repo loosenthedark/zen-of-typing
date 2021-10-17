@@ -6,7 +6,7 @@
 
 ![in-game screenshot of deployment terminal](docs/images/screenshots/in-game-deployed.png)
 
-[The Zen of Typing](https://zen-of-typing.herokuapp.com/) is a Python terminal project whose primary purpose is to enable users to practice and improve their touch typing skills.
+**[The Zen of Typing](https://zen-of-typing.herokuapp.com/)** is a Python terminal project whose primary purpose is to enable users to practice and improve their touch typing skills.
 
 Secondarily, it serves to reinforce various (mainly Python-related) programming principles and aphorisms through the use of carefully-selected practice texts and extracts.
 
@@ -211,8 +211,8 @@ Having selected both a text and the number of lines to be typed, the user is nex
 - [pyjokes API:](https://pyjok.es/api/) used to request and compile lists of programming jokes as needed (via the module's `get_jokes` function)
 - [Ezgif image converter:](https://ezgif.com/svg-to-png) used to convert the Python logo used in the creation of a project favicon from `.svg` to `.png` format
 - [PicResize:](https://picresize.com/) used to crop and resize images
-- [Responsively App:](https://responsively.app/) Used to frequently test and inspect responsive layout and component rendering as the project took shape
-- [Editor.md:](https://pandao.github.io/editor.md/en.html) used to format project Markdown in line with best practices
+<!-- - [Responsively App:](https://responsively.app/) Used to frequently test and inspect responsive layout and component rendering as the project took shape
+- [Editor.md:](https://pandao.github.io/editor.md/en.html) used to format project Markdown in line with best practices -->
 
 </details>
 
@@ -223,38 +223,28 @@ Having selected both a text and the number of lines to be typed, the user is nex
     <b>click to view</b>
   </summary>
 
-### Netlify:
+A `TypingText` class has been used as the main application model.
 
-This project has been deployed to [Netlify](https://www.netlify.com/) using continuous deployment in sync with [GitHub](https://en.wikipedia.org/wiki/GitHub). A full step-by-step guide to what's involved in setting up this workflow can be found [here](https://www.netlify.com/blog/2016/09/29/a-step-by-step-guide-deploying-on-netlify/)
+This class's `__init__` state initialisation method creates properties to store the following app-related information:
 
-### Forking the GitHub Repository:
+- game mode: By default, the class's **`beast`** property is set to `False`. What this means is that the game's Beast Mode (which involves the user having to type target text lines backwards) has not been enabled, and so the normal mode of standard text display is in effect.
+- (boolean) game state flags pertaining to each of the following:
+  - whether or not the game has **`started`**
+  - whether or not the game has **`finished`**
+  - whether or not the game is currently **`running`**
+- string values (initially set to empty strings) corresponding to the self-explanatory properties of **`text_typed`** and **`text_to_be_typed`**
+- user performance- and results-related properties (all of which are initially set to `0`):
+  - **`start_time`**
+  - **`total_time`**
+  - **`typing_accuracy`**
+  - **`wpm`** (words per minute)
 
-It is possible to fork this GitHub repository to view and/or make changes without affecting the original. This is achieved by following these steps...
+The class also has three game-centric methods - the names of which are again self-explanatory - that are used to coordinate various aspects of functionality:
+  - **`activate()`**
+  - **`game_restart()`**
+  - **`calculate_results()`**
 
-1. [**Sign in** to your GitHub account](https://github.com/login) and locate the [relevant repository](https://github.com/loosenthedark/going-for-gold).
-2. Click on **Fork**, located near the top right-hand corner of the repository page.
-3. You will now have a copy of this project's repository in your own GitHub account.
-
-### Making a local clone:
-
-It is possible to copy the repository to your local machine so that you can fix merge conflicts, add or remove files and push larger commits without affecting the original project code. Cloning a repository pulls down a full copy of all the repo data that GitHub has at that point in time. See the [GitHub Docs](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository) for further information, and below for a brief summary...
-
-1. [**Sign in** to your GitHub account](https://github.com/login) and locate the [relevant repository](https://github.com/loosenthedark/going-for-gold).
-2. Click on the **Code** dropdown next to the green **Gitpod** button. This will reveal the **Clone** option.
-3. In order to clone the repository using `HTTPS`, select **HTTPS** and copy the link shown (there is a copy button to the right of the URL).
-4. Next, open **Git Bash** (see [here](https://git-scm.com/downloads) for an overview of download options, if required).
-5. Change the current working directory on your local machine to the location where you want the cloning to be made.
-6. Type `git clone` into your IDE terminal followed by the URL you copied in Step 3 above, i.e.
-
-```
-https://github.com/loosenthedark/going-for-gold.git
-```
-
-7. Press **Enter**.
-8. Your local clone has now been created.
-
-_See the [GitHub Docs](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories) for more information on all of the above processes._
-
+It was not deemed necessary to create any instances of this class, as the game functionality doesn't really call for it.
 </details>
 
 ## Testing

@@ -220,16 +220,9 @@ class TypingText:
     """Class for enclosing all methods required to run the application"""
 
     def __init__(self):
-        self.practiced = False
-        self.reset = True
-        self.beast = False
-        self.started = self.finished = self.running = False
+        self.beast = self.started = self.finished = self.running = False
         self.text_typed = self.text_to_be_typed = ''
         self.start_time = self.total_time = self.typing_accuracy = self.wpm = 0
-        self.score = (
-            f'Time: {self.total_time} | Accuracy: {self.typing_accuracy}%'
-            f' | WordsPerMinute: {self.wpm}'
-            )
 
     def calculate_results(self, text_a, text_b):
         '''
@@ -446,7 +439,7 @@ class TypingText:
             print('')
             input()
             print('')
-            answers['practice'] = 'practiced'
+            # answers['practice'] = 'practiced'
             self.activate()
         while self.running:
             print('')
@@ -469,14 +462,13 @@ class TypingText:
                 )
             self.finished = True
             self.running = False
-            self.practiced = True
+            # self.practiced = True
 
     def game_restart(self):
         """
         Method for resetting game state by returning main properties to
         original values.
         """
-        self.reset = False
         self.finished = False
         self.text_typed = self.text_to_be_typed = ''
         self.start_time = self.total_time = self.wpm = 0
