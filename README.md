@@ -48,8 +48,13 @@ Having selected both a text and the number of lines to be typed, the user is nex
   </summary>
 
 - #### Python-centric ASCII art hero image and colour scheme
+  <details>
+    <summary>
+    <b>click to view</b>
+    </summary>
 
   The prevalent blue and yellow design palette both draws the user's attention and reinforces the fact that this is very much a [Python](https://en.wikipedia.org/wiki/File:Python-logo-notext.svg) application. Elsewhere, semantic text feedback is displayed in a familiar and intuitive fashion, e.g. error messages in red, success alerts in green. While many terminal projects can look drab and monotone, it was the developer's intention that The Zen of Typing should be anything but.
+    </details>
 
 - #### Immersive sequential flow of multiple-choice menus and questions (enabled c/o the [PyInquirer module](https://github.com/CITGuru/PyInquirer))
 
@@ -91,29 +96,14 @@ Having selected both a text and the number of lines to be typed, the user is nex
   <b>click to view</b>
   </summary>
 
-- #### Individual breakout pages for each country:
+- #### Ask user to enter email and send them a breakdown of their typing speed/accuracy (via smtplib module)?
+  Given more time, I would have.....
 
-  Given more time, I would have been able to build this expanded feature into the current version of the app. A standalone component could be dynamically populated with more granular information about each country's medal haul: for example, appropriate use of React icons could highlight the Olympic events in which that particular nation was successful. Names of athletes/winners could also be listed, perhaps along with a more detailed look at that country's Olympic Games success rate historically.
+- #### Real-time user feedback, e.g. incorrectly-typed text highlighted in red so that the user can go back and correct mistake(s) (cf. [this example](https://mithil467.github.io/mitype/))
 
-- #### Aggregate the data to compile relative medal-winning stats for each of the five continents represented by the Olympic rings:
+- #### Add padding to terminal output (chiefly the target text and/or user input) to improve readability and overall appearance (cf. [this blog post](https://stackabuse.com/padding-strings-in-python/))
 
-  This would be a fun and interesting add-on I feel, and would once again shine a slightly alternative light on what is a veritable ocean of Olympics-related stats and datasets. It would actually be quite easy to implement, and could similarly be used to run down both total and per capita figures for each continent.
-
-- #### Expand the scope of the project to also incorporate the Tokyo 2020 Paralympic Games:
-
-  More than just a nice-to-have, this is a feature that ought really to have been included from the start in the current MVP. However, three factors combined to prevent me from readily including corresponding figures for Paralympic medal-winning countries:
-
-  - There simply isn't the same availability of data (and/or APIs) related to the Paralympics, so a good bit more digging would have been required to find appropriately malleable numbers
-  - The Paralympic Games were still actually taking place throughout most of this project's development life cycle, and so trying to gather data would necessarily have constituted something of a 'moving target' exercise
-  - Finally, as is so often the case, the project deadline approached quicker than I would have liked, and I was mindful of [not falling into the familiar trap](https://quotefancy.com/quote/757101/Tom-Cargill-The-first-90-percent-of-the-code-accounts-for-the-first-90-percent-of-the) of feature creep
-
-- #### ["Infinite scroll"](https://www.npmjs.com/package/react-infinite-scroll-component) and/or pagination:
-
-  One of a number of necessary trade-offs made to ensure the overall project made it over the finish line inside its submission dealine. A dynamic 'back-to-top' button component has been put in place to compensate for the absence of both of the above, and it is hoped this will help improve UX sufficiently until such time as I'm able to add these convenient features.
-
-- #### Site-wide dark mode:
-
-  At present, the user is only able to toggle dark mode on or off while browsing the main Medallists page. Ideally, this feature should be available throughout the application to give a more coherent and complete feel. However, it's worth noting that the site's [About page](https://going-for-gold.netlify.app/about) has been styled with a 'dark mode-like' background colour by default, and that the neumorphic styling that's been applied to the [Contact form](https://going-for-gold.netlify.app/contact) would also likely be affected by dark mode being enabled there.
+- #### Bind secret password reveal functionality not just to typing speed, but also to accuracy
   </details>
 
 ## Technologies Used
@@ -430,8 +420,8 @@ Where code blocks/snippets/suggestions have been incorporated from external sour
 
 ### Acknowledgments:
 
-- As with my previous two projects, my number one cheerleader, product tester and source up both inspiration and sanity throughout the current build process was my partner Ana. _Muito obrigado, menina_ ❤️
-- My mentor [Tim Nelson](https://github.com/TravelTimN) was once more on hand to provide invaluable guidance and encouragement. Among many other things, he helped me identify an issue with my `requirements.txt` file that had escaped my attention 🙌 😅
+- As with my previous two projects, my number one cheerleader, product tester and source of both inspiration and sanity throughout the current build process has been my amazing partner Ana. _Muito obrigado, menina_ ❤️
+- My mentor [Tim Nelson](https://github.com/TravelTimN) was also on hand once more to provide invaluable guidance and encouragement. Among many other things, he helped me identify an issue with my `requirements.txt` file that had escaped my attention 🙌 😅
 
 ## Notice
 
@@ -448,13 +438,3 @@ This site has been created for development purposes only.
 Blinking ANSI code?
 
 Prevent pasted-in text from validating
-
-### Potential Future Features:
-
-- ask user to enter email and send them a breakdown of their typing speed/accuracy (via smtplib module)?
-
-- real-time user feedback, e.g. incorrectly-typed text highlighted in red so that the user can go back and correct mistake(s) (cf. [this example](https://mithil467.github.io/mitype/))
-
-- Add padding to terminal output (chiefly the target text and/or user input) to improve readability and overall appearance (cf. [this blog post](https://stackabuse.com/padding-strings-in-python/))
-
-- Bind secret password reveal functionality not just to typing speed, but also to accuracy
