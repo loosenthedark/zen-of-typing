@@ -1,4 +1,3 @@
-![Python logo wallpaper background](docs/images/bg-python.png)
 ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
 # The Zen of Typing
@@ -318,9 +317,11 @@ Creating the repository from the template involved following each of these steps
     <b>click to view</b>
   </summary>
 
-It is possible to fork this GitHub repository to view and/or make changes without affecting the original. This is achieved by following these steps...
+It is possible to fork this project's GitHub repository to view and/or make changes without affecting the original. This is achieved by following these steps...
 
-1. [**Sign in** to your GitHub account](https://github.com/login) and locate the [relevant repository](https://github.com/loosenthedark/going-for-gold).
+_NB: The steps outlined below assume that you already have [Git](https://git-scm.com/) set up on your computer - for an overview of how to download, install, and configure Git, consult the [GitHub Docs](https://docs.github.com/en/github-ae@latest/articles/set-up-git)_
+
+1. [**Sign in** to your GitHub account](https://github.com/login) and locate the [relevant repository](https://github.com/loosenthedark/zen-of-typing).
 2. Click on **Fork**, located near the top right-hand corner of the repository page.
 3. You will now have a copy of this project's repository in your own GitHub account.
 </details>
@@ -334,7 +335,7 @@ It is possible to fork this GitHub repository to view and/or make changes withou
 
 It is possible to copy the repository to your local machine so that you can fix merge conflicts, add or remove files and push larger commits without affecting the original project code. Cloning a repository pulls down a full copy of all the repo data that GitHub has at that point in time. See the [GitHub Docs](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository) for further information, and below for a brief summary...
 
-1. [**Sign in** to your GitHub account](https://github.com/login) and locate the [relevant repository](https://github.com/loosenthedark/going-for-gold).
+1. [**Sign in** to your GitHub account](https://github.com/login) and locate the [relevant repository](https://github.com/loosenthedark/zen-of-typing).
 2. Click on the **Code** dropdown next to the green **Gitpod** button. This will reveal the **Clone** option.
 3. In order to clone the repository using `HTTPS`, select **HTTPS** and copy the link shown (there is a copy button to the right of the URL).
 4. Next, open **Git Bash** (see [here](https://git-scm.com/downloads) for an overview of download options, if required).
@@ -342,13 +343,71 @@ It is possible to copy the repository to your local machine so that you can fix 
 6. Type `git clone` into your IDE terminal followed by the URL you copied in Step 3 above, i.e.
 
 ```
-https://github.com/loosenthedark/going-for-gold.git
+https://github.com/loosenthedark/zen-of-typing.git
 ```
 
 7. Press **Enter**.
 8. Your local clone has now been created.
 
 _See the [GitHub Docs](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories) for more information on all of the above processes._
+</details>
+
+### Heroku
+
+<details>
+  <summary>
+    <b>click to view</b>
+  </summary>
+
+The application is deployed on [**Heroku**](https://heroku.com/), and can be accessed using the following URL: https://zen-of-typing.herokuapp.com/
+
+The steps involved in deploying to Heroku were as follows:
+
+1. Create a `requirements.txt` file from the command line, and populate it with a list of project dependencies:
+
+  ```
+  pip3 freeze > requirements.txt
+  ```
+
+2. Save, commit and push your changes to GitHub.
+
+3. Create a `Procfile`
+
+  ```
+  echo web: node index.js > Procfile
+  ```
+
+_NB: This file comes baked-in with the [Code Institute project template repository](https://github.com/Code-Institute-Org/python-essentials-template), so can be skipped if you are using that in your own build_
+
+4. Create an account with Heroku, selecting Python as the primary development language.
+
+5. [Log in to your account](https://id.heroku.com/login), and in the top right-hand corner of the **Dashboard** click on **New > Create new app**
+
+6. Enter a unique name for your app and select your region. Click on **Create app**.
+
+7. Go to **Settings**
+
+8. Click on the **Reveal Config Vars** button in the 'Config Vars' section.
+
+9. Enter PORT in the KEY field and 8000 in the VALUE field.
+
+10. In the 'Buildpacks' section further down the settings page, click on **Add buildpack**.
+
+11. Select **python** and **nodejs** from the menu of "officially supported buildpacks". 
+
+_NB: Python must be placed at the top of your app's buildpack list. You can drag and drop your buildpacks to reposition them if necessary._
+
+12. Go to **Deploy**.
+
+13. Select **GitHub** in the 'Deployment method' section.
+
+14. In the 'Connect to GitHub' section, search for the repository you wish to use, then click **Connect**.
+
+15. Ensure that the project's main or master branch (depending on which is being used as the primary branch) is selected under 'Deploy a GitHub branch' in the 'Manual deploy' section.
+
+_NB: If you choose to **Enable Automatic Deploys**, Heroku will rebuild the app every time you push a change to GitHub (which is considered best practice in most instances)._
+
+15. After clicking on the **Deploy Branch** button, you should see a message confirming that "Your app was successfully deployed" followed by a **View** button which can be clicked to launch and view the app.
 </details>
 
 ## Credits
@@ -453,7 +512,7 @@ Where code blocks/snippets/suggestions have been incorporated from external sour
 
 This site has been created for development purposes only.
 
-*****************************************************************************************
+![Python logo wallpaper background](docs/images/bg-python.png)
 
 ['PEP 20 -- The Zen of Python'](https://www.python.org/dev/peps/pep-0020/) (Python.org)
 
@@ -482,6 +541,8 @@ The text content of the project's `sunscreen.txt` file is an abridged version of
 Valentin Bryukhanov's [PEP8 online checker](http://pep8online.com/) was used to validate the project's Python code, in line with best practice.
 
 ['How to split up a long f-string in python?'](https://stackoverflow.com/questions/48881196/how-to-split-up-a-long-f-string-in-python) (Stack Overflow)
+
+['Creating a repository from a template'](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template) (GitHub Docs)
 
 ['Ternary Operator in Python'](https://www.geeksforgeeks.org/ternary-operator-in-python/) (GeeksforGeeks)
 
