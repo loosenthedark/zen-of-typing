@@ -21,6 +21,8 @@ Users can customise their experience by choosing from a range of options before 
 
 The Zen of Typing is loosely modelled on classic typing programmes such as ['Mavis Beacon Teaches Typing!'](https://en.wikipedia.org/wiki/Mavis_Beacon_Teaches_Typing), which the developer was known to spend countless hours practicing throughout his misspent youth.
 
+![Mavis Beacon game cover](docs/images/mavis-beacon-cover.png)
+
 The title is also a play on ['The Zen of Python'](https://www.python.org/dev/peps/pep-0020/), Pythoneer [Tim Peters'](https://en.wikipedia.org/wiki/Tim_Peters_(software_engineer)) list of fundamental commandments for the then-nascent programming language, which was first issued in 1999 and has since come to be seen as something of a cornerstone document.
 
 To begin, a welcome message is communicated on the start screen and the user is asked if they would like to warm up by tackling a practice text (which is subsequently revealed to be [Tom Cargill's humorous observation now known as the 'ninety-ninety rule'](https://en.wikipedia.org/wiki/Ninety%E2%80%93ninety_rule)).
@@ -46,6 +48,8 @@ Having selected both a text and the number of lines to be typed, the user is nex
   <summary>
   <b>click to view</b>
   </summary>
+
+![ASCII art typewriter](docs/images/ascii-art-typewriter.jpg)
 
 - #### Python-centric ASCII art hero image and colour scheme
   <details>
@@ -113,8 +117,8 @@ Having selected both a text and the number of lines to be typed, the user is nex
   - The user is provided with instant feedback in the form of a results breakdown, consisting of overall time taken, accuracy and average speed (in words typed per minute). In most cases, this alone should be enough of a hook to encourage them to keep playing in the hope of improving on their current 'personal best' score(s)
   - The secret password/'Beast Mode' functionality is initially alluded to in passing, but quickly becomes a central aspect of the game. Crucially, the user is never directly informed as to how and when the next character of this password will be revealed, so they are kept guessing (and wanting more) to a large extent.
     </details>
-
-- #### Input validation and error-checking
+    
+  - #### Input validation and error-checking
   <details>
     <summary>
     <b>click to view</b>
@@ -122,6 +126,7 @@ Having selected both a text and the number of lines to be typed, the user is nex
 
   The one open-ended question demanding user input is the secret password prompt. This is handled in a straightforward binary fashion: if the user enters anything other than the correct (case-sensitive) password, they are informed of their mistake and the game simply starts as normal. This is accomplished by using a compound if statement within the game class's main `activate()` method.
     </details>
+    
   </details>
 
 ### Potential future features:
@@ -130,6 +135,8 @@ Having selected both a text and the number of lines to be typed, the user is nex
   <summary>
   <b>click to view</b>
   </summary>
+
+![ASCII art computer](docs/images/ascii-art-computer.jpg)
 
 - #### Ask user to enter email and send them a breakdown of their typing speed/accuracy (via smtplib module)?
   Given more time, I would have.....
