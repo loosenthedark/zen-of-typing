@@ -148,15 +148,15 @@ Having selected both a text and the number of lines to be typed, the user is nex
   ![Features screenshot 6](docs/images/screenshots/features/features-6.png)
     </details>
 
-  - #### Input validation and error-checking
-    <details>
-      <summary>
-      click to view
-      </summary>
+- #### Input validation and error-checking
+  <details>
+    <summary>
+    click to view
+    </summary>
 
-    The one open-ended question demanding user input is the secret password prompt. This is handled in a straightforward binary fashion: if the user enters anything other than the correct (case-sensitive) password, they are informed of their mistake and the game simply starts as normal. This is accomplished by using a compound if statement within the game class's main `activate()` method.
+  The one open-ended question demanding user input is the secret password prompt. This is handled in a straightforward binary fashion: if the user enters anything other than the correct (case-sensitive) password, they are informed of their mistake and the game simply starts as normal. This is accomplished by using a compound if statement within the game class's main `activate()` method.
 
-    ![Features screenshot 7](docs/images/screenshots/features/features-7.png)
+  ![Features screenshot 7](docs/images/screenshots/features/features-7.png)
       </details>
 
   </details>
