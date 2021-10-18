@@ -12,26 +12,6 @@ import pyjokes
 from PyInquirer import prompt
 from examples import custom_style_2
 
-# from prompt_toolkit.validation import Validator, ValidationError
-
-# class PhoneNumberValidator(Validator):
-#     def validate(self, document):
-#         ok = regex.match(r"^\d{10}$", document.text)
-#         if not ok:
-#             raise ValidationError(
-#                 message='Please enter a valid phone number',
-#                 cursor_position=len(document.text))  # Move cursor to end
-
-
-# class InputValidator(Validator):
-#     def validate(self, document):
-#         try:
-#             int(document.text)
-#         except ValueError:
-#             raise ValidationError(
-#                 message='Please enter a number',
-#                 cursor_position=len(document.text))  # Move cursor to end
-
 # dictionary of target texts
 texts = {
     "dry": "Don't Repeat Yourself (DRY)",
