@@ -146,7 +146,7 @@ questions = [
 question_restart = [{
         'type': 'confirm',
         'name': 'restart_game',
-        'message': 'Would you like another go?',
+        'message': 'Would you like to start over and make a new selection?',
         'default': False
     }]
 

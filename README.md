@@ -327,9 +327,13 @@ An example of a bug (one of many) that the developer managed to rectify is the `
 
 #### Remaining Bugs:
 
-Blinking ANSI code?
+Flashing/Blinking terminal text, e.g. when asking the user if they wish to play the game again, was a feature that failed to launch - for reasons that aren't immediately evident to the developer. It's likely to be related to ANSI SGR behaviour and how this is rendered in the browser. Whatever the cause(s) of this bug, unfortunately the examples of 'blinking' output [seen here](https://stackoverflow.com/questions/287871/how-to-print-colored-text-to-the-terminal/39452138#39452138) could not be replicated in TZoT for the time being.
 
-Prevent pasted-in text from validating
+One rather obvious blind spot in the game's design is that it is possible to completely cheat and record an impossibly high wpm score by simply copying and pasting the target text as it is printed to the screen into the terminal as user input. Going forward it would obviously be a good idea to mitigate against this type of user behaviour - though it would require some further exploration, e.g. to find a module tailored to this purpose.
+
+Finally, one more design flaw within the application is the fact that the `TypingText` class's `calculate_results` method only allows for direct character-by-character comparison when calculating user accuracy. Thus, if the user mistakenly types a single extra character somewhere, all subsequent characters in that user input string are likely to be deemed 'mistakes' - even if they happen to be completely accurate in terms of what the user is attempting to type at that particular moment in time. This problem is perhaps best illustrated using an in-game screenshot:
+
+![Bug: typing accuracy screenshot](docs/images/screenshots/bugs/bug-accuracy.png)
       </details>
 
 ### Validation:
