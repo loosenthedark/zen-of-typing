@@ -224,7 +224,6 @@ class TypingText:
             score = 0
             for i, char in enumerate(text_a):
                 try:
-                    # print(char)
                     if text_b[i] == char:
                         score += 1
                 except:
@@ -398,11 +397,7 @@ class TypingText:
                     f"chosen for you:{colours['CEND']}"
                     )
         print('')
-        # test exception handling functionality within choose_text fn
-        # print(choose_text(text=None))
         text_for_typing = choose_text(chosen_text)
-        # test exception handling functionality within get_lines_for_typing fn
-        # print(get_lines_for_typing(chosen_text, 'abc'))
         self.beast = True if (
             answers['secret_password'] and
             answers['enter_password'] == 'PEP8' and
@@ -412,8 +407,6 @@ class TypingText:
             text_for_typing, num_of_lines, self.beast
             )
         stringified_text_for_typing = '\n'.join(text_for_typing)
-        # stringified_text_for_typing = stringified_text_for_typing[::-1]
-        # print(len(stringified_text_for_typing))
         for line in text_for_typing:
             print(
                 f"{colours['CITALIC']}{textwrap.fill(line, width=76)}"
@@ -423,7 +416,6 @@ class TypingText:
             print('')
             input()
             print('')
-            # answers['practice'] = 'practiced'
             self.activate()
         while self.running:
             print('')
@@ -446,7 +438,6 @@ class TypingText:
                 )
             self.finished = True
             self.running = False
-            # self.practiced = True
 
     def game_restart(self):
         """

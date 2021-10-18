@@ -95,6 +95,7 @@ Having selected both a text and the number of lines to be typed, the user is nex
     </summary>
 
   Not everyone is a super-fast expert typist. Similarly, not everyone produces their finest work under pressure. Bearing this in mind, The Zen of Typing allows users to practice their typing in a relaxed fashion without having to worry about performance metrics (the practice mode is not 'recorded', i.e. no speed/accuracy calculations are made). They may then progress to the stricter in-game conditions whenever they feel ready.
+
   ![Features screenshot 2](docs/images/screenshots/features/features-2.png)
     </details>
 
@@ -105,6 +106,7 @@ Having selected both a text and the number of lines to be typed, the user is nex
     </summary>
 
   [Hick's Law](https://lawsofux.com/hicks-law/) states that "the time it takes to make a decision increases with the number and complexity of choices". If, therefore, the user feels somewhat overwhelmed at having to choose between the six available target texts, they can simply ask the [random module](https://docs.python.org/3/library/random.html) to help lighten their cognitive load by deciding for them.
+
   ![Features screenshot 3](docs/images/screenshots/features/features-3.png)
     </details>
 
@@ -115,6 +117,7 @@ Having selected both a text and the number of lines to be typed, the user is nex
     </summary>
 
   Five of the six available target texts are directly related to computer programming, with a strong Python emphasis. While it would arguably have been simpler to work with generic/filler content, this way the Zen of Typing user stands to kill two birds with one stone (so to speak) by rounding out their coding knowledge as they're working on their typing speed.
+
   ![Features screenshot 4](docs/images/screenshots/features/features-4.png)
     </details>
 
@@ -137,8 +140,11 @@ Having selected both a text and the number of lines to be typed, the user is nex
 
   One surefire way to drive user engagement is to harness the principles of [operant conditioning](https://en.wikipedia.org/wiki/Operant_conditioning) when designing an interactive application. The Zen of Typing adheres to this objective on at least two fronts:
   - The user is provided with instant feedback in the form of a results breakdown, consisting of overall time taken, accuracy and average speed (in words typed per minute). In most cases, this alone should be enough of a hook to encourage them to keep playing in the hope of improving on their current personal best score(s)
+
   ![Features screenshot 5](docs/images/screenshots/features/features-5.png)
+
   - The secret password/'Beast Mode' functionality is initially alluded to in passing, but quickly becomes a central aspect of the game. Crucially, the user is never directly informed as to how and when the next character of this password will be revealed, so they are kept guessing (and wanting more) to a large extent.
+
   ![Features screenshot 6](docs/images/screenshots/features/features-6.png)
     </details>
 
@@ -149,6 +155,7 @@ Having selected both a text and the number of lines to be typed, the user is nex
       </summary>
 
     The one open-ended question demanding user input is the secret password prompt. This is handled in a straightforward binary fashion: if the user enters anything other than the correct (case-sensitive) password, they are informed of their mistake and the game simply starts as normal. This is accomplished by using a compound if statement within the game class's main `activate()` method.
+
     ![Features screenshot 7](docs/images/screenshots/features/features-7.png)
       </details>
 
@@ -316,6 +323,8 @@ The application was rigorously tested throughout its development life cycle. Thi
 
 ![Bug: ValueError showing in deployment terminal](docs/images/screenshots/bugs/bug-valueerror.png)
 
+An example of a bug (one of many) that the developer managed to rectify is the `ValeError` shown in the screenshot above. Such error messages were invariably returned when an inappropriate value was being passed as an argument to a function, and required careful and continuous debugging.
+
 #### Remaining Bugs:
 
 Blinking ANSI code?
@@ -422,7 +431,7 @@ It is possible to copy the repository to your local machine so that you can fix 
 6. Type `git clone` into your IDE terminal followed by the URL you copied in Step 3 above, i.e.
 
 ```
-https://github.com/loosenthedark/zen-of-typing.git
+git clone https://github.com/loosenthedark/zen-of-typing.git
 ```
 
 7. Press **Enter**.
