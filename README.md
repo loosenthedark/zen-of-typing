@@ -214,7 +214,7 @@ Having selected both a text and the number of lines to be typed, the user is nex
     click to view
     </summary>
 
-At the time of writing, the user is rewarded via the application's incremental secret password reveal functionality based solely on typing **speed**. More specifically, they are shown the first character of this password when they record a speed of 20 words per minute, the second when they reach 30 wpm, the third at 40 wpm and the fourth and final character once they achieve a speed of 50 wpm. However, this happens irrespective of typing **accuracy** - theoretically, a user could therefore speed-type gibberish (i.e. record an extremely low accuracy rate) and still manage to unlock the password and access Beast Mode. This could be prevented using more sophisticated and nuanced conditional logic, and is something the developer intends to implement in future revisions of the app.
+  At the time of writing, the user is rewarded via the application's incremental secret password reveal functionality based solely on typing **speed**. More specifically, they are shown the first character of this password when they record a speed of 20 words per minute, the second when they reach 30 wpm, the third at 40 wpm and the fourth and final character once they achieve a speed of 50 wpm. However, this happens irrespective of typing **accuracy** - theoretically, a user could therefore speed-type gibberish (i.e. record an extremely low accuracy rate) and still manage to unlock the password and access Beast Mode. This could be prevented using more sophisticated and nuanced conditional logic, and is something the developer intends to implement in future revisions of the app.
     </details>
 
   </details>
@@ -304,6 +304,8 @@ It was not deemed necessary to create any instances of this class, as the game f
 
 ## Testing
 
+The application was rigorously tested throughout its development life cycle. This process ranged from manual testing (e.g. by deliberately entering an incorrect password when prompted) through to automated validator testing. As always, numerous bugs were identified at various stages - some of which have since been resolved, while others have proven to be more persistent and will have to be tackled at some point in the future.
+
 ### Bugs:
   <details>
       <summary>
@@ -312,11 +314,13 @@ It was not deemed necessary to create any instances of this class, as the game f
 
 #### Solved Bugs:
 
-It is possible to copy the repository to your local machine so that you can fix merge conflicts, add or remove files and push larger commits without affecting the original project code. Cloning a repository pulls down a full copy of all the repo data that GitHub has at that point in time. See the [GitHub Docs](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository) for further information, and below for a brief summary...
+![Bug: ValueError showing in deployment terminal](docs/images/screenshots/bugs/bug-valueerror.png)
 
 #### Remaining Bugs:
 
-It is possible to copy the repository to your local machine so that you can fix merge conflicts, add or remove files and push larger commits without affecting the original project code. Cloning a repository pulls down a full copy of all the repo data that GitHub has at that point in time. See the [GitHub Docs](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository) for further information, and below for a brief summary...
+Blinking ANSI code?
+
+Prevent pasted-in text from validating
       </details>
 
 ### Validation:
@@ -596,13 +600,3 @@ Where code blocks/snippets/suggestions have been incorporated from external sour
 This site has been created for development purposes only.
 
 ![Python logo wallpaper background](docs/images/bg-python.png)
-
-************************************************
-
-### Bugs (+/- Bug Fixes):
-
-![Bug: ValueError showing in deployment terminal](docs/images/screenshots/bugs/bug-valueerror.png)
-
-Blinking ANSI code?
-
-Prevent pasted-in text from validating
