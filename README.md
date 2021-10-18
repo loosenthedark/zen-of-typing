@@ -53,6 +53,8 @@ Having selected both a text and the number of lines to be typed, the user is nex
   - If they enter a correct password, meanwhile, they unlock a bonus submenu offering the chance to acticate the 'Beast Mode' feature (explained in more detail below).
 
   ![How to play screenshot 7](docs/images/screenshots/how-to-play/how-to-play-7.png)
+
+  ![How to play screenshot 8](docs/images/screenshots/how-to-play/how-to-play-8.png)
 </details>
 
 ## Features
@@ -162,28 +164,59 @@ Having selected both a text and the number of lines to be typed, the user is nex
 ![ASCII art computer](docs/images/ascii-art-computer.jpg)
 
 - #### Add dynamic 'High Score' user feedback functionality
+  <details>
+    <summary>
+    click to view
+    </summary>
 
   Given more time, an additional UX feature I would like to have included to boost gamification is a way of storing and updating their current high score (in wpm) in memory. This could be implemented by using conditional logic (attached to a class method) and writing the high score to a project `.txt` file. A good example can be found in [this video tutorial](https://www.youtube.com/watch?v=h0q1Quyb1mU)
+    </details>
 
 - #### Follow-up email feature Ask user to enter email and send them a breakdown of their typing speed/accuracy (via smtplib module)?
+  <details>
+    <summary>
+    click to view
+    </summary>
 
   Another way to keep the user hooked and ensure they return to the application would be if they received a summary breakdown of their performance (average typing speed, accuracy, high score etc.) after they have exited the programme. This would probably be a good use case for the [`smtplib` module](https://docs.python.org/3/library/smtplib.html)
+    </details>
 
 - #### Social media integration
+  <details>
+      <summary>
+      click to view
+      </summary>
 
-  Allowing users to share their new high score (see above) etc. via social media would be a great way to publicise the app and start growing a community of TZOT users. The actively maintained [twython module](https://pypi.org/project/twython/) looks like it would be ideal for this purpose, Twitter being the channel that arguably lends itself best to this type of functionality. There's even scope for [uploading an image as part of a status update](https://twython.readthedocs.io/en/latest/usage/advanced_usage.html#updating-status-with-image), which would be useful for sharing in-game screenshots with the world at large. 
+  Allowing users to share their new high score (see above) etc. via social media would be a great way to publicise the app and start growing a community of TZOT users. The actively maintained [twython module](https://pypi.org/project/twython/) looks like it would be ideal for this purpose, Twitter being the channel that arguably lends itself best to this type of functionality. There's even scope for [uploading an image as part of a status update](https://twython.readthedocs.io/en/latest/usage/advanced_usage.html#updating-status-with-image), which would be useful for sharing in-game screenshots with the world at large.
+      </details>
 
 - #### Real-time user feedback
+  <details>
+    <summary>
+    click to view
+    </summary>
 
   At present, users are only able to get an indication of how quickly and accurately they are typing _after_ they have completed a typing task (i.e. as soon as they press Enter at the end of a target text, they are given a results breakdown). A more dynamic means of providing user feedback would be to have a running timer situated somewhere in the UI, as well as displaying a 'live' words-per-minute calculation. Going further, incorrectly-typed text could also be highlighted in real time so that the user would be able to go back and correct mistake(s) (cf. [this example](https://mithil467.github.io/mitype/)). On reflection, it's likely that this functionality would have required quite extensive refactoring, and so a decision was made to leave it out of this initial app version.
+    </details>
 
 - #### Add margin/padding to mock terminal output
+  <details>
+    <summary>
+    click to view
+    </summary>
 
   From a cosmetic standpoint, terminal text by default is not particularly pleasing to the eye. Part of the reason for this is the lack of layout and spacing options, which can often lead to things looking quite bunched and difficult to read. With this in mind, it would be nice to be able to add some extra spacing between the left and right borders of the mock terminal and the text output (chiefly the target text and/or user input) in order to improve readability and overall appearance (cf. [this blog post](https://stackabuse.com/padding-strings-in-python/)).
+    </details>
 
 - #### Bind secret password reveal functionality not just to typing speed, but also to accuracy
+  <details>
+    <summary>
+    click to view
+    </summary>
 
-  At the time of writing, the user is rewarded via the application's incremental secret password reveal functionality based solely on typing **speed**. More specifically, they are shown the first character of this password when they record a speed of 20 words per minute, the second when they reach 30 wpm, the third at 40 wpm and the fourth and final character once they achieve a speed of 50 wpm. However, this happens irrespective of typing **accuracy** - theoretically, a user could therefore speed-type gibberish (i.e. record an extremely low accuracy rate) and still manage to unlock the password and access Beast Mode. This could be prevented using more sophisticated and nuanced conditional logic, and is something the developer intends to implement in future revisions of the app.
+At the time of writing, the user is rewarded via the application's incremental secret password reveal functionality based solely on typing **speed**. More specifically, they are shown the first character of this password when they record a speed of 20 words per minute, the second when they reach 30 wpm, the third at 40 wpm and the fourth and final character once they achieve a speed of 50 wpm. However, this happens irrespective of typing **accuracy** - theoretically, a user could therefore speed-type gibberish (i.e. record an extremely low accuracy rate) and still manage to unlock the password and access Beast Mode. This could be prevented using more sophisticated and nuanced conditional logic, and is something the developer intends to implement in future revisions of the app.
+    </details>
+
   </details>
 
 ## Technologies Used
@@ -245,6 +278,8 @@ Having selected both a text and the number of lines to be typed, the user is nex
 
 A `TypingText` class has been used as the main application model.
 
+![data model screenshot](docs/images/screenshots/init.png)
+
 This class's `__init__` state initialisation method creates properties to store the following app-related information:
 
 - game mode: By default, the class's **`beast`** property is set to `False`. What this means is that the game's Beast Mode (which involves the user having to type target text lines backwards) has not been enabled, and so the normal mode of standard text display is in effect.
@@ -268,11 +303,6 @@ It was not deemed necessary to create any instances of this class, as the game f
 </details>
 
 ## Testing
-
-<details>
-  <summary>
-    click to view
-  </summary>
 
 ### Bugs:
   <details>
@@ -301,8 +331,6 @@ Valentin Bryukhanov's [online validation tool](http://pep8online.com/) was used 
 
 ![Python validation icon](docs/images/icons/icon-python-validation.png)
       </details>
-
-</details>
 
 ## Deployment
 
