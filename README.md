@@ -1,5 +1,3 @@
-![Python logo wallpaper background](docs/images/bg-python.png)
-
 ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
 # The Zen of Typing
@@ -163,14 +161,29 @@ Having selected both a text and the number of lines to be typed, the user is nex
 
 ![ASCII art computer](docs/images/ascii-art-computer.jpg)
 
-- #### Ask user to enter email and send them a breakdown of their typing speed/accuracy (via smtplib module)?
-  Given more time, I would have.....
+- #### Add dynamic 'High Score' user feedback functionality
 
-- #### Real-time user feedback, e.g. incorrectly-typed text highlighted in red so that the user can go back and correct mistake(s) (cf. [this example](https://mithil467.github.io/mitype/))
+  Given more time, an additional UX feature I would like to have included to boost gamification is a way of storing and updating their current high score (in wpm) in memory. This could be implemented by using conditional logic (attached to a class method) and writing the high score to a project `.txt` file. A good example can be found in [this video tutorial](https://www.youtube.com/watch?v=h0q1Quyb1mU)
 
-- #### Add padding to terminal output (chiefly the target text and/or user input) to improve readability and overall appearance (cf. [this blog post](https://stackabuse.com/padding-strings-in-python/))
+- #### Follow-up email feature Ask user to enter email and send them a breakdown of their typing speed/accuracy (via smtplib module)?
+
+  Another way to keep the user hooked and ensure they return to the application would be if they received a summary breakdown of their performance (average typing speed, accuracy, high score etc.) after they have exited the programme. This would probably be a good use case for the [`smtplib` module](https://docs.python.org/3/library/smtplib.html)
+
+- #### Social media integration
+
+  Allowing users to share their new high score (see above) etc. via social media would be a great way to publicise the app and start growing a community of TZOT users. The actively maintained [twython module](https://pypi.org/project/twython/) looks like it would be ideal for this purpose, Twitter being the channel that arguably lends itself best to this type of functionality. There's even scope for [uploading an image as part of a status update](https://twython.readthedocs.io/en/latest/usage/advanced_usage.html#updating-status-with-image), which would be useful for sharing in-game screenshots with the world at large. 
+
+- #### Real-time user feedback
+
+  At present, users are only able to get an indication of how quickly and accurately they are typing _after_ they have completed a typing task (i.e. as soon as they press Enter at the end of a target text, they are given a results breakdown). A more dynamic means of providing user feedback would be to have a running timer situated somewhere in the UI, as well as displaying a 'live' words-per-minute calculation. Going further, incorrectly-typed text could also be highlighted in real time so that the user would be able to go back and correct mistake(s) (cf. [this example](https://mithil467.github.io/mitype/)). On reflection, it's likely that this functionality would have required quite extensive refactoring, and so a decision was made to leave it out of this initial app version.
+
+- #### Add margin/padding to mock terminal output
+
+  From a cosmetic standpoint, terminal text by default is not particularly pleasing to the eye. Part of the reason for this is the lack of layout and spacing options, which can often lead to things looking quite bunched and difficult to read. With this in mind, it would be nice to be able to add some extra spacing between the left and right borders of the mock terminal and the text output (chiefly the target text and/or user input) in order to improve readability and overall appearance (cf. [this blog post](https://stackabuse.com/padding-strings-in-python/)).
 
 - #### Bind secret password reveal functionality not just to typing speed, but also to accuracy
+
+  At the time of writing, the user is rewarded via the application's incremental secret password reveal functionality based solely on typing **speed**. More specifically, they are shown the first character of this password when they record a speed of 20 words per minute, the second when they reach 30 wpm, the third at 40 wpm and the fourth and final character once they achieve a speed of 50 wpm. However, this happens irrespective of typing **accuracy** - theoretically, a user could therefore speed-type gibberish (i.e. record an extremely low accuracy rate) and still manage to unlock the password and access Beast Mode. This could be prevented using more sophisticated and nuanced conditional logic, and is something the developer intends to implement in future revisions of the app.
   </details>
 
 ## Technologies Used
