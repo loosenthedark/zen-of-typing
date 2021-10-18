@@ -1,3 +1,5 @@
+![Python logo wallpaper background](docs/images/bg-python.png)
+
 ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
 # The Zen of Typing
@@ -216,8 +218,8 @@ Having selected both a text and the number of lines to be typed, the user is nex
 - Valentin Bryukhanov's [PEP8 online checker](http://pep8online.com/) was used to [validate](#validation) the project's Python code, in line with best practice.
 - [Ezgif image converter:](https://ezgif.com/svg-to-png) used to convert the Python logo used in the creation of a project favicon from `.svg` to `.png` format
 - [PicResize:](https://picresize.com/) used to crop and resize images
-<!-- - [Responsively App:](https://responsively.app/) Used to frequently test and inspect responsive layout and component rendering as the project took shape
-- [Editor.md:](https://pandao.github.io/editor.md/en.html) used to format project Markdown in line with best practices -->
+<!-- - [Responsively App:](https://responsively.app/) Used to frequently test and inspect responsive layout as the project took shape -->
+- [Editor.md:](https://pandao.github.io/editor.md/en.html) used to format project Markdown in line with best practices
 
 </details>
 
